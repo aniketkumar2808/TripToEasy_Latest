@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvTrDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <LinearLayout
+                android:id="@+id/llHotelPackage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_5"
+                android:background="@color/gray"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtHotelPackage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/medium"
+                        android:paddingBottom="@dimen/padding_10"
+                        android:paddingLeft="@dimen/padding_5"
+                        android:paddingTop="@dimen/padding_10"
+                        android:text="Hotel Package "
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_16" />
+
+                    <Spinner
+                        android:id="@+id/spinnerHotelPickup"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/padding_2"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/llHotelName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/medium"
+                        android:paddingBottom="@dimen/padding_10"
+                        android:paddingLeft="@dimen/padding_5"
+                        android:paddingTop="@dimen/padding_10"
+                        android:text="Hotel Package "
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_16"
+                        android:visibility="invisible" />
+
+                    <EditText
+                        android:id="@+id/edHotelName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/padding_2"
+                        android:layout_marginRight="@dimen/padding_10"
+                        android:background="@drawable/bg_accept"
+                        android:hint="Hotel Name"
+                        android:paddingBottom="@dimen/padding_5"
+                        android:paddingLeft="@dimen/padding_10"
+                        android:paddingRight="@dimen/padding_10"
+                        android:paddingTop="@dimen/padding_5"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llPromCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_10"
+                    android:layout_marginTop="@dimen/padding_5"
+                    android:fontFamily="@font/regular"
+                    android:text="Have an e-coupon or deal-code? (Optional)"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_14" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/padding_10"
+                    android:layout_marginRight="@dimen/padding_10"
+                    android:layout_marginTop="@dimen/padding_5"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/edPromoCode"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/txtApplyPromoCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/padding_2"
+                        android:background="@color/colorPrimaryDark"
+                        android:gravity="center"
+                        android:paddingBottom="@dimen/padding_5"
+                        android:paddingLeft="@dimen/padding_30"
+                        android:paddingRight="@dimen/padding_30"
+                        android:paddingTop="@dimen/padding_5"
+                        android:text="Apply"
+                        android:textColor="@color/white"
+
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:layout_marginLeft="@dimen/padding_10"
+                android:layout_marginTop="@dimen/margin_10"
+                android:background="@color/white"
+
+                android:text="Contact Details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_18" />
+
+            <EditText
+
+                android:id="@+id/email_id_prim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_10"
+                android:background="@drawable/white_butten"
+                android:drawableLeft="@drawable/ic_email"
+                android:drawablePadding="@dimen/padding_10"
+                android:drawableTint="@color/red"
+                android:hint="Mail Id"
+                android:inputType="textEmailAddress"
+                android:padding="@dimen/padding_10" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_5"
+                android:layout_marginRight="@dimen/padding_10"
+                android:layout_marginTop="@dimen/padding_5"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:layout_weight="0.3"
+                    android:background="@drawable/white_butten"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/spinn_countrycode"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:padding="@dimen/padding_5" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/mobile_prime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:layout_weight="0.7"
+                    android:background="@drawable/white_butten"
+                    android:drawableLeft="@drawable/ic_mobile"
+                    android:drawablePadding="@dimen/padding_10"
+
+                    android:drawableTint="@color/red"
+                    android:hint="Mobile Number"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    android:padding="@dimen/padding_10" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/txtTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_10"
+                android:drawableLeft="@drawable/ic_tag"
+                android:drawablePadding="@dimen/padding_5"
+                android:gravity="center"
+                android:text="Tag Friends"
+                android:textColor="@color/black" />
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginRight="@dimen/padding_10"
+                android:layout_marginTop="@dimen/margin_10"
+                android:drawableLeft="@drawable/black_dot"
+                android:drawablePadding="@dimen/padding_10"
+                android:drawableTint="@color/orange_text"
+                android:text="Your mobile number will be used only for sending hotel related communication"
+                android:textSize="@dimen/text_12" />
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/cbTerms"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_10"
+                android:layout_marginTop="@dimen/padding_10"
+                android:text="Terms and Condition"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_14" />
+
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtGrandTotal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/medium"
+            android:gravity="center"
+            android:paddingBottom="@dimen/padding_5"
+            android:paddingTop="@dimen/padding_5"
+            android:text="
+"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_16" />
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+
+        </View>
+
+        <TextView
+
+
+            android:id="@+id/txtConBooking"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/medium"
+            android:gravity="center"
+            android:paddingBottom="@dimen/padding_10"
+            android:paddingTop="@dimen/padding_10"
+            android:text="Continue Booking"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_16" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="@dimen/padding_10"
+        android:fontFamily="@font/bold"
+        android:gravity="center"
+        android:text="@string/select_date_and_participant"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_16" />
+
+
+    <Spinner
+        android:id="@+id/spinnerAvlDate"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="@dimen/padding_20"
+        android:layout_marginRight="@dimen/padding_20"
+        android:layout_marginTop="@dimen/padding_10"
+        android:background="@drawable/bg_comment"
+        android:spinnerMode="dialog" />
+
+
+    <TextView
+        android:id="@+id/txtTotalTra"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="@dimen/padding_20"
+        android:layout_marginRight="@dimen/padding_20"
+        android:layout_marginTop="@dimen/padding_10"
+        android:background="@drawable/bg_comment"
+        android:drawableRight="@drawable/ic_down"
+        android:fontFamily="@font/regular"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/padding_10"
+        android:paddingRight="@dimen/padding_10"
+        android:text="@string/total_travellers_1"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_16"
+
+
+        />
+
+    <LinearLayout
+        android:id="@+id/llCheckAvl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/padding_10"
+        android:layout_marginLeft="@dimen/padding_20"
+        android:layout_marginRight="@dimen/padding_20"
+        android:layout_marginTop="@dimen/padding_10"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/note_active_calender_date_showing_availability_of_the_package"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_12" />
+
+        <Button
+            android:id="@+id/btnCheckAvl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_20"
+            android:background="@drawable/blue_butten"
+            android:fontFamily="@font/medium"
+            android:text="@string/check_availablity"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_16" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llAddMembers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/padding_10"
+        android:layout_marginLeft="@dimen/padding_20"
+        android:layout_marginRight="@dimen/padding_20"
+        android:layout_marginTop="@dimen/padding_10"
+        android:background="@drawable/bg_comment_txt"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_10"
+        android:visibility="gone"
+
+        >
+
+
+        <LinearLayout
+            android:id="@+id/llAdult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtAdultDis"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_10"
+                android:layout_weight="1"
+                android:text="@string/adult_age_13_to_99"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_14" />
+
+            <ImageView
+                android:id="@+id/ivMinus"
+                android:layout_width="@dimen/width_30"
+                android:layout_height="@dimen/width_30"
+                android:background="@color/colorPrimary"
+                android:src="@drawable/ic_minus" />
+
+            <TextView
+                android:id="@+id/txtTravCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_10"
+                android:layout_marginRight="@dimen/padding_10"
+                android:fontFamily="@font/bold"
+                android:text="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_18"
+
+
+                />
+
+            <ImageView
+                android:id="@+id/ivPlus"
+                android:layout_width="@dimen/width_30"
+                android:layout_height="@dimen/width_30"
+                android:background="@color/colorPrimary"
+                android:src="@drawable/ic_plus"
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llChild"
+            android:layout_marginTop="@dimen/padding_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtChild"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_10"
+                android:layout_weight="1"
+                android:text="@string/child_age_3_to_12"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_14" />
+
+            <ImageView
+                android:id="@+id/ivChildMinus"
+                android:layout_width="@dimen/width_30"
+                android:layout_height="@dimen/width_30"
+                android:background="@color/colorPrimary"
+                android:src="@drawable/ic_minus" />
+
+            <TextView
+                android:id="@+id/txtChildTRCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_10"
+                android:layout_marginRight="@dimen/padding_10"
+                android:fontFamily="@font/bold"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_18"
+
+
+                />
+
+            <ImageView
+                android:id="@+id/ivChildPlus"
+                android:layout_width="@dimen/width_30"
+                android:layout_height="@dimen/width_30"
+                android:background="@color/colorPrimary"
+                android:src="@drawable/ic_plus" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llInfant"
+            android:layout_marginTop="@dimen/padding_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtInfant"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_10"
+                android:layout_weight="1"
+                android:text="@string/infant_age_0_to_2"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_14" />
+
+            <ImageView
+                android:id="@+id/ivInfantMinus"
+                android:layout_width="@dimen/width_30"
+                android:layout_height="@dimen/width_30"
+                android:background="@color/colorPrimary"
+                android:src="@drawable/ic_minus" />
+
+            <TextView
+                android:id="@+id/txtTRInfantCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_10"
+                android:layout_marginRight="@dimen/padding_10"
+                android:fontFamily="@font/bold"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_18"
+
+
+                />
+
+            <ImageView
+                android:id="@+id/ivInfantPlus"
+                android:layout_width="@dimen/width_30"
+                android:layout_height="@dimen/width_30"
+                android:background="@color/colorPrimary"
+                android:src="@drawable/ic_plus" />
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btnDone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding_10"
+            android:layout_marginTop="@dimen/padding_10"
+            android:background="@color/colorPrimary"
+            android:fontFamily="@font/medium"
+            android:text="@string/done"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_16" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

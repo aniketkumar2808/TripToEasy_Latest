@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/margin_5"
+    app:cardCornerRadius="@dimen/padding_5">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.75"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_10">
+
+                <TextView
+                    android:id="@+id/company_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Airline Name"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/regular"
+                    android:textSize="@dimen/text_12"/>
+
+                <TextView
+                    android:id="@+id/bus_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2+1 Sleeper Non AC"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:maxLines="1"
+                    android:textSize="@dimen/text_10"
+                    android:layout_marginBottom="@dimen/margin_10"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/width_01"
+                    android:background="@color/gray"
+                    android:layout_marginLeft="@dimen/margin_10" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.35"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/departure_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/bold"
+                            android:text="13:10"
+                            android:textColor="@color/blue_text"
+                            android:textSize="@dimen/text_14" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.35"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/travel_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/regular"
+                            android:text="26h 20m"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_12" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_5">
+
+                            <ImageView
+                                android:id="@+id/indicator_left"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/ic_blue_indicator" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/one_way_indicator"
+                                android:layout_toRightOf="@+id/indicator_left"
+                                android:background="@color/blue_text" />
+
+                            <ImageView
+                                android:id="@+id/one_way_indicator"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/ic_bus_indicator" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/indicator_right"
+                                android:layout_toRightOf="@+id/one_way_indicator"
+                                android:background="@color/blue_text" />
+
+                            <ImageView
+                                android:id="@+id/indicator_right"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/ic_blue_indicator"
+                                android:layout_alignParentRight="true"/>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.35"
+                        android:gravity="end"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/arrival_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/bold"
+                            android:text="13:10"
+                            android:textColor="@color/blue_text"
+                            android:textSize="@dimen/text_14" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/width_01"
+                android:layout_height="match_parent"
+                android:background="@color/gray"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_10"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25"
+                android:orientation="vertical"
+                android:layout_gravity="bottom|center"
+                android:padding="@dimen/padding_5">
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rs.1000"
+                    android:textSize="@dimen/text_14"
+                    android:textColor="@color/orange_text"
+                    android:fontFamily="@font/bold"
+                    android:layout_gravity="center"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10">
+
+                    <ImageView
+                        android:id="@+id/seat_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_list_seet"/>
+
+                    <TextView
+                        android:id="@+id/seats_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/seat_image"
+                        android:layout_marginLeft="@dimen/margin_10"
+                        android:text="Seats"
+                        android:fontFamily="@font/regular"/>
+
+                    <TextView
+                        android:id="@+id/seat_count"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/seat_image"
+                        android:layout_below="@+id/seats_text"
+                        android:text="25"
+                        android:gravity="center"
+                        android:fontFamily="@font/black"
+                        android:textColor="@color/black"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sold_out_ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#88000000"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="SOLD OUT"
+                android:textColor="@color/orange_right"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:gravity="right|center_vertical"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</android.support.v7.widget.CardView>

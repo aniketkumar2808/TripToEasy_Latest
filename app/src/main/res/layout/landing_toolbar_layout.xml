@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/toolbar_height"
+    android:background="@color/colorPrimary"
+    android:elevation="@dimen/elevation_4">
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/drawer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_open_drawer"
+            android:tint="@color/white"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="HOME"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_currency_sel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/padding_5"
+            android:layout_margin="@dimen/margin_10"
+            android:layout_alignParentRight="true">
+            <ImageView
+                android:id="@+id/currency_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/flag_india"
+                android:layout_toRightOf="@+id/drawer"
+                />
+
+            <TextView
+                android:id="@+id/currency_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="INR"
+                android:fontFamily="@font/regular"
+                android:textSize="@dimen/text_14"
+                android:padding="@dimen/padding_5"
+                android:textColor="@color/white"/>
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_expand_more"
+                android:layout_toRightOf="@+id/drawer"
+                android:tint="@color/white"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.Toolbar>

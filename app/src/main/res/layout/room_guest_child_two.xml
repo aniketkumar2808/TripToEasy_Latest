@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    android:id="@+id/age_text"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="01"
+    android:paddingTop="@dimen/padding_5"
+    android:paddingBottom="@dimen/padding_5"
+    android:paddingLeft="@dimen/padding_15"
+    android:paddingRight="@dimen/padding_15"
+    android:background="@drawable/orange_butten"
+    android:textColor="@color/white"
+    android:textSize="@dimen/text_16"
+    android:fontFamily="@font/regular"
+    android:layout_margin="@dimen/margin_10"/>

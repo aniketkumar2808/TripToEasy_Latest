@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/all_page_bg">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/landing_toolbar_layout"/>
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_layout"
+        android:layout_below="@+id/toolbar"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+         <android.support.v7.widget.CardView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:background="@color/white">
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal"
+                 android:paddingTop="@dimen/margin_10"
+                 android:paddingBottom="@dimen/margin_5"
+                 android:gravity="center">
+
+                 <LinearLayout
+                     android:id="@+id/flight_search"
+                     android:layout_width="0dp"
+                     android:layout_height="wrap_content"
+                     android:layout_weight="0.25"
+                     android:orientation="vertical"
+                     android:gravity="center">
+
+                     <ImageView
+                         android:layout_width="40dp"
+                         android:layout_height="40dp"
+                         android:src="@drawable/flight"/>
+
+                     <TextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_marginTop="@dimen/margin_10"
+                         android:text="@string/flight"
+                         android:textColor="@color/colorPrimary"
+                         android:fontFamily="@font/regular"/>
+
+                 </LinearLayout>
+
+                 <LinearLayout
+                     android:id="@+id/hotel_search"
+                     android:layout_width="0dp"
+                     android:layout_height="wrap_content"
+                     android:layout_weight="0.25"
+                     android:orientation="vertical"
+                     android:gravity="center">
+
+                     <ImageView
+                         android:layout_width="40dp"
+                         android:layout_height="40dp"
+                         android:src="@drawable/hotel"/>
+
+                     <TextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_marginTop="@dimen/margin_10"
+                         android:text="@string/hotel"
+                         android:textColor="@color/colorPrimary"
+                         android:fontFamily="@font/regular"/>
+
+                 </LinearLayout>
+
+                 <LinearLayout
+                     android:visibility="visible"
+                     android:id="@+id/bus_search"
+                     android:layout_width="0dp"
+                     android:layout_height="wrap_content"
+                     android:layout_weight="0.25"
+                     android:orientation="vertical"
+                     android:gravity="center">
+
+                     <ImageView
+                         android:layout_width="40dp"
+                         android:layout_height="40dp"
+                         android:src="@drawable/bus"/>
+
+                     <TextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_marginTop="@dimen/margin_10"
+                         android:text="@string/bus"
+                         android:textColor="@color/colorPrimary"
+                         android:fontFamily="@font/regular"/>
+
+                 </LinearLayout>
+
+                 <LinearLayout
+                     android:visibility="gone"
+                     android:id="@+id/holiday_search"
+                     android:layout_width="0dp"
+                     android:layout_height="wrap_content"
+                     android:layout_weight="0.25"
+                     android:orientation="vertical"
+                     android:gravity="center">
+
+                     <ImageView
+                         android:layout_width="50dp"
+                         android:layout_height="50dp"
+                         android:src="@drawable/hotel"/>
+
+                     <TextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_marginTop="@dimen/margin_10"
+                         android:text="@string/holiday"
+                         android:textColor="@color/white"
+                         android:fontFamily="@font/regular"/>
+
+                 </LinearLayout>
+                 <LinearLayout
+                     android:visibility="visible"
+                     android:id="@+id/transfers_search"
+                     android:layout_width="0dp"
+                     android:layout_height="wrap_content"
+                     android:layout_weight="0.25"
+                     android:orientation="vertical"
+                     android:gravity="center">
+
+                     <ImageView
+                         android:layout_width="40dp"
+                         android:layout_height="40dp"
+                         android:src="@drawable/transfer"/>
+
+                     <TextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_marginTop="@dimen/margin_10"
+                         android:text="@string/transfers"
+                         android:textColor="@color/colorPrimary"
+                         android:fontFamily="@font/regular"/>
+
+                 </LinearLayout>
+                 <LinearLayout
+                     android:id="@+id/activities_search"
+                     android:layout_width="0dp"
+                     android:layout_height="wrap_content"
+                     android:layout_weight="0.25"
+                     android:orientation="vertical"
+                     android:gravity="center"
+                     >
+
+                     <ImageView
+                         android:layout_width="40dp"
+                         android:layout_height="40dp"
+                         android:src="@drawable/activity"/>
+
+                     <TextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_marginTop="@dimen/margin_10"
+                         android:text="@string/activities"
+                         android:textColor="@color/colorPrimary" />
+
+                 </LinearLayout>
+
+             </LinearLayout>
+         </android.support.v7.widget.CardView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_10">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Best Offers"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/bold"
+                    android:textSize="@dimen/text_14"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/view_all"/>
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/view_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/view_all"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/blue_butten"
+                    android:padding="@dimen/padding_10"
+                    android:textColor="@color/white"/>
+
+            </RelativeLayout>
+
+            <!--
+            Layout Manager Horizontal for internation packages
+            -->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/package_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </android.support.v7.widget.RecyclerView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Trending Hotels"
+                android:textColor="@color/black"
+                android:fontFamily="@font/bold"
+                android:textSize="@dimen/text_14"
+                android:padding="@dimen/padding_10"
+                android:layout_marginTop="@dimen/margin_20"
+                android:background="@color/white"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/top_hotel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_20"
+                android:padding="@dimen/margin_10"
+                android:background="@color/white"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Top Airlines"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/bold"
+                    android:textSize="@dimen/text_14"
+                    android:layout_centerVertical="true"
+                    />
+
+            </RelativeLayout>
+
+            <!--
+            Layout Manager Horizontal for domestic packages
+            -->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_topAirlineList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingTop="20dp"
+                android:paddingBottom="30dp"
+                >
+
+            </android.support.v7.widget.RecyclerView>
+
+
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</RelativeLayout>

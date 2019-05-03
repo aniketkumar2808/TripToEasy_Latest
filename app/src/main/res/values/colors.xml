@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F5C525</color>
+    <color name="colorPrimaryDark">#deb017</color>
+    <color name="colorAccent">#009846</color>
+    <color name="orange_left">#009846</color>
+    <color name="orange_right">#009846</color>
+    <color name="transparen">#80FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="all_page_bg">#f9f9f9</color>
+    <color name="blue_text">#F5C525</color>
+    <color name="orange_text">#000000</color>
+    <color name="gray">#e7e7e7</color>
+    <color name="dark_gray">#8c8c8c</color>
+    <color name="light_blue">#e7f4f7</color>
+    <color name="blue_left">#F5C525</color>
+    <color name="blue_right">#f1d67f</color>
+    <color name="filter_left">#F5C525</color>
+    <color name="filter_right">#563069</color>
+    <color name="light_blue_color">#faecbb</color>
+    <color name="segment_bg">#f1f2f2</color>
+    <color name="black_sixty">#60000000</color>
+    <color name="black_tex">#10000000</color>
+    <color name="rating_selected">#ffb200</color>
+    <color name="rating_not_selected">#bababa</color>
+    <color name="b_one">#D42395</color>
+    <color name="b_two">#E5E6E7</color>
+    <color name="b_three">#baa0da</color>
+    <color name="b_four">#744c89</color>
+    <color name="b_five">#707171</color>
+    <color name="b_six">#8B99A3</color>
+    <color name="b_seven">#58BE6C</color>
+    <color name="current_date_bg">#80e0e0e0</color>
+    <color name="color_cal_text">#333333</color>
+    <color name="color_cal_text_other">#80333333</color>
+    <color name="font_color">#333333</color>
+    <color name="light_font_color">#CC333333</color>
+    <color name="color_present">#ffda5f</color>
+    <color name="color_present_day">#006600</color>
+    <color name="color_absent">#ffda5f</color>
+    <color name="color_absent_other">#80ee2738</color>
+    <color name="selected_date_bg">#56b01c2d</color>
+    <color name="transparent">#80FFFFFF</color>
+    <color name="red">#29265b</color>
+
+
+</resources>

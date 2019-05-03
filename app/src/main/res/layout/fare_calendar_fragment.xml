@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    tools:context="com.travojet.flight.fragment.FairCalendarFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:background="@color/blue_text"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/month_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="May 2018"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_2"
+            android:textColor="@color/white"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+    <com.github.sundeepk.compactcalendarview.CompactCalendarView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/calendar_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="50dp"
+        app:compactCalendarBackgroundColor="@color/white"
+        app:compactCalendarCurrentDayBackgroundColor="@color/current_date_bg"
+        app:compactCalendarCurrentDayIndicatorStyle="fill_large_indicator"
+        app:compactCalendarCurrentSelectedDayBackgroundColor="@color/selected_date_bg"
+        app:compactCalendarDisplayOtherMonthDays="true"
+        app:compactCalendarEventIndicatorStyle="small_indicator"
+        app:compactCalendarOtherMonthDaysTextColor="@color/color_cal_text_other"
+        app:compactCalendarShouldSelectFirstDayOfMonthOnScroll="true"
+        app:compactCalendarTextColor="@color/font_color"
+        app:compactCalendarTextSize="12sp"
+        app:compactCalenderHeaderColor="@color/light_font_color"
+        app:compactCalenderHolidayTextColor="@color/color_absent"
+        app:compactCalenderHolidayTextColorOther="@color/color_absent_other"
+        app:compactCurrentDateColor="@color/color_present_day" />
+
+    <Button
+        android:layout_width="@dimen/width_100"
+        android:layout_height="@dimen/width_40"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:text="@string/done"
+        android:background="@drawable/orange_butten"
+        android:layout_margin="@dimen/margin_5"
+        android:id="@+id/bt_done"
+        android:textColor="@color/white"/>
+
+</RelativeLayout>

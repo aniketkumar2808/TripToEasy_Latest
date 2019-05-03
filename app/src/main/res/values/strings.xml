@@ -1,0 +1,268 @@
+<resources>
+    <string name="app_name">TravoJet</string>
+
+    <string name="facebook_app_id">316039099111695</string>
+    <string name="fb_login_protocol_scheme">fb316039099111695</string>
+
+
+    <string name="demo_min_label"></string>
+    <string name="demo_max_label"></string>
+
+    <string name="flight">Flight</string>
+    <string name="hotel">Hotel</string>
+    <string name="bus">Bus</string>
+    <string name="holiday">Holidays</string>
+    <string name="more">More</string>
+
+    <string name="one_way">One Way</string>
+    <string name="round_trip">Round Trip</string>
+    <string name="multi_city">Multi City</string>
+
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="departure_date">Departure Date</string>
+    <string name="return_date">Return Date</string>
+    <string name="departure_price">Departure</string>
+    <string name="return_price">Return</string>
+    <string name="total_price">Total</string>
+    <string name="price">Price</string>
+
+    <string name="travellers">Travellers</string>
+    <string name="adults">Adult (12+)</string>
+    <string name="child">Children (2 - 11 Years)</string>
+    <string name="infant">Infant (below 2 Years)</string>
+    <string name="ad">AD</string>
+    <string name="ch">CH</string>
+    <string name="in">IN</string>
+    <string name="search">SEARCH</string>
+    <string name="advanced_options">Advanced Options ></string>
+    <string name="fare_calendar">Fare Calendar</string>
+    <string name="add_city">Add City+</string>
+
+    <string name="filter">Filter</string>
+    <string name="sort">Sort</string>
+    <string name="no_of_stop">No. of Stops</string>
+    <string name="zero_stop">0\nStop</string>
+    <string name="one_stop">1\nStop</string>
+    <string name="two_stop">1+\nStop</string>
+    <string name="departure_time">Departure Time</string>
+    <string name="arrival_time">Arrival Time</string>
+    <string name="airline">Airlines</string>
+    <string name="early_morning">Early Morning\n12 - 6 AM</string>
+    <string name="morning">Morning\n6 - 12 AM</string>
+    <string name="mid_day">Mid-Day\n12 - 6 PM</string>
+    <string name="evening">Evening\n6 - 12 PM</string>
+    <string name="bus_early_morning">5 - 9 AM</string>
+    <string name="bus_morning">9AM - 5 PM</string>
+    <string name="bus_mid_day">5 - 9 PM</string>
+    <string name="bus_evening">9PM - 5 AM</string>
+    <string name="cancel">Clear Filter</string>
+    <string name="save">Apply</string>
+    <string name="save_profile">Save</string>
+
+    <string name="book_now">Book Now</string>
+    <string name="book">BOOK</string>
+    <string name="grand_total">Grand Total</string>
+    <string name="base_fare">Base Fare</string>
+    <string name="taxes">Taxes</string>
+    <string name="tax_fees">Taxes &amp; Fees</string>
+    <string name="convenience_fee">Convenience Fees</string>
+    <string name="layover">Layover</string>
+    <string-array name="values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+
+    <string-array name="values_two">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+
+    <!--
+    Hotel Constants
+    -->
+    <string name="city">City</string>
+    <string name="city_name">City Name</string>
+    <string name="check_in">Check-in</string>
+    <string name="check_out">Check-out</string>
+    <string name="guests">Guests</string>
+    <string name="rooms">Rooms</string>
+
+    <!--
+    Home Page Constants
+    -->
+    <string name="perfect_holidays">Best packages under travojet.in</string>
+    <string name="view_all">View all</string>
+    <string name="why_choose_us">Why Choose Us ?</string>
+    <string name="best_price">Best Price Guaranteed</string>
+    <string name="customer_satisfaction">99.9% Customer Satisfaction</string>
+    <string name="customer_support">24/7 Customer Support</string>
+    <string name="top_hotel_destination">Trending Hotel Destinations</string>
+    <string name="our_customer_says">Our Customer Says</string>
+    <string name="home">Home</string>
+    <string name="my_accounts">My Account</string>
+    <string name="my_bookings">My Bookings</string>
+    <string name="night_count">Night Count</string>
+    <string name="hotel_description">Hotel Description</string>
+    <string name="hotel_facilities">Facilities</string>
+    <string name="show_more">Show more</string>
+    <string name="show_less">Show Less</string>
+
+    <string name="Rs">\u20B9</string>
+
+    <string name="guest_room">Select Guest &amp; Room</string>
+    <string name="add_room">Add Room+</string>
+    <string name="done">DONE</string>
+
+    <string name="start_rating">Star Rating</string>
+    <string name="amenities">Amenities</string>
+    <string name="wifi">Wi-Fi</string>
+    <string name="breakfast">Breakfast</string>
+    <string name="parking">Parking</string>
+    <string name="pool">Swimming Pool</string>
+
+    <string name="dummy_text">Dummy text is text that is used in the publishing industry or by web designers to occupy the space which will later be filled with real content. This is required when, for example, the final text is not yet available.</string>
+
+    <!--
+    BUS
+    -->
+    <string name="journey_date">Journey Date</string>
+    <string name="select_seats">Select Seats</string>
+    <string name="seat_available">Available</string>
+    <string name="seat_res_ladies">Reserved for Ladies</string>
+    <string name="seat_res_gents">Reserved for Gents</string>
+    <string name="seat_blocked">Blocked</string>
+    <string name="seat_book_ladies">Booked by Ladies</string>
+    <string name="seat_book_gents">Booked by Gents</string>
+
+    <!--
+    Holiday Package
+    -->
+    <string name="country">Country</string>
+    <string name="package_type">Package Type</string>
+    <string name="package_duration">Duration</string>
+    <string name="package_budget">Budget</string>
+    <string name="send_query">Send Query</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="total_fare">Total Fare</string>
+
+    <string name="dob">Date of Birth</string>
+    <string name="passport_number">Passport Number</string>
+    <string name="passport_expiry_date">Passport Expiry Date</string>
+    <string name="tap_here_to_register_with_travojet">Tap here to Register with travojet</string>
+
+    <string name="addresss">Address</string>
+    <string name="room_type">Room Type</string>
+    <string name="dropping_point">Dropping Point</string>
+    <string name="boarding_point">Boarding Point</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="title">Title</string>
+    <string name="seat_detail">Seat Detail</string>
+
+    <string-array name="array_name">
+        <item>Mr</item><!-- M -->
+        <item>Ms</item><!-- F-->
+        <item>Miss</item><!-- F -->
+        <item>Master</item><!-- M -->
+        <item>Mrs</item><!-- F -->
+    </string-array>
+    <string-array name="type_array_name">
+        <item>Adult</item>
+        <item>Child</item>
+        <item>Infant</item>
+    </string-array>
+    <string name="title_activity_landing_new">LandingActivityNew</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="cancellation_refunds">Cancellation &amp; Refunds</string>
+    <string name="cancellation_policy">Cancellation Policy</string>
+    <string name="cancellation">Cancellation</string>
+    <string name="terms_conditions">Terms &amp; Conditions</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="about_us">About us</string>
+    <string name="select_class">Select Class ></string>
+    <string name="change_password">Change Password</string>
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
+    <string name="reenter_new_password">ReEnter New Password</string>
+    <string name="activities">Activities</string>
+    <string name="coming_soon">Coming Soon</string>
+    <string name="please_login_first">Please Login First</string>
+    <string name="logout">Logout</string>
+    <string name="login">Login</string>
+    <string name="close">Close</string>
+    <string name="internation_holiday">International Holidays Destinations</string>
+    <string name="india_holiday">India Holidays Destinations</string>
+    <string name="iata_certified">IATA Certified</string>
+    <string name="booking_id">Booking ID</string>
+    <string name="bus_type">Bus Type</string>
+    <string name="ac">AC</string>
+    <string name="non_ac">NON AC</string>
+    <string name="seater">SEATER</string>
+    <string name="sleeper">Sleeper</string>
+    <string name="bus_operator">Bus Operator</string>
+    <string name="skip_log_in">SKIP LOG IN</string>
+    <string name="reset_password_text">Enter your registered email id and mobile number to get new password</string>
+    <string name="enter_your_email">Enter Your Email</string>
+    <string name="enter_mobile_number">Enter Mobile Number</string>
+    <string name="get_otp">Get Otp</string>
+    <string name="enter_otp">Enter Otp</string>
+    <string name="enter_new_password">Enter New Password</string>
+    <string name="forgot_password">Forgot Password ?</string>
+    <string name="transfers">Transfer</string>
+    <string name="enter_location">Enter location</string>
+    <string name="check_availablity">Check Availablity</string>
+    <string name="select_transfer">Select Transfer</string>
+    <string name="instant_confirmation">Instant Confirmation</string>
+    <string name="search_here">Search here</string>
+    <string name="overview">Overview</string>
+    <string name="details">Details</string>
+    <string name="important_info">Important Info</string>
+    <string name="customer_reviews">Customer Reviews</string>
+    <string name="select_date">Select Date</string>
+    <string name="no_of_pax">No. of Pax</string>
+    <string name="select_date_and_participant">Select Date and participant</string>
+    <string name="total_travellers_1">Total Travellers 1</string>
+    <string name="note_active_calender_date_showing_availability_of_the_package">Note : Active Calender date showing availability of the Package</string>
+    <string name="adult_age_13_to_99">Adult (Age 13 to 99)</string>
+    <string name="child_age_3_to_12">Child (Age 3 to 12)</string>
+    <string name="infant_age_0_to_2">Infant (Age 0 to 2)</string>
+    <string name="total">Total</string>
+    <string name="selected">Selected</string>
+    <string name="select">Select</string>
+    <string name="add_travellers">Add Travellers</string>
+    <string name="questions">Questions</string>
+    <string name="app_login_type">travojet</string>
+    <string name="discount">Discount</string>
+    <string name="holiday_type">Holiday Type</string>
+    <string name="hotel_location">Hotel Location</string>
+    <string name="reference_id">Reference id :</string>
+    <string name="status">Status :</string>
+    <string name="date">Date :</string>
+    <string name="add_amount">Add Amount</string>
+    <string name="closing_balance">Closing Balance :</string>
+    <string name="amount_paid">Amount Paid</string>
+    <string name="amount_added">Amount Added</string>
+    <string name="transaction_cancelled">Transaction Cancelled</string>
+</resources>

@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/all_page_bg">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.15"
+        android:background="@color/colorPrimary">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_above="@+id/bottom_layout">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/from"
+                    android:fontFamily="@font/regular"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:id="@+id/from_station"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/bold"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_16"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/to"
+                    android:fontFamily="@font/regular"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:id="@+id/to_destination"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/bold"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_16"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bottom_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@+id/travel_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="02 Feb"
+                android:textColor="@color/white"
+                android:fontFamily="@font/regular"
+                android:padding="@dimen/padding_5"
+                android:drawableLeft="@drawable/ic_white_calendar"
+                android:drawablePadding="@dimen/padding_10"/>
+
+            <TextView
+                android:id="@+id/traveller_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="02 Travelers"
+                android:textColor="@color/white"
+                android:fontFamily="@font/regular"
+                android:padding="@dimen/padding_5"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_10"
+                android:drawableLeft="@drawable/ic_white_traveller"
+                android:drawablePadding="@dimen/padding_10"/>
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/return_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="02 Feb"
+                android:textColor="@color/white"
+                android:fontFamily="@font/regular"
+                android:padding="@dimen/padding_5"
+                android:drawableLeft="@drawable/ic_white_calendar"
+                android:drawablePadding="@dimen/padding_10"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.85">
+
+
+        <RelativeLayout
+            android:id="@+id/bottom_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/blue_text"
+            android:padding="@dimen/margin_10">
+
+            <TextView
+                android:id="@+id/book_now"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/book_now"
+                android:textColor="@color/blue_text"
+                android:background="@drawable/white_butten"
+                android:padding="@dimen/margin_10"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/bold"
+                android:textSize="@dimen/text_18"/>
+
+            <TextView
+                android:id="@+id/text_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/grand_total"
+                android:textColor="@color/white"
+                android:fontFamily="@font/regular"
+                android:textSize="@dimen/text_14"/>
+
+            <TextView
+                android:id="@+id/total_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rs. 2968"
+                android:textColor="@color/white"
+                android:fontFamily="@font/bold"
+                android:textSize="@dimen/text_16"
+                android:layout_below="@+id/text_one"
+                android:layout_marginTop="@dimen/margin_5"/>
+
+        </RelativeLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottom_view">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/segment_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginBottom="@dimen/margin_10">
+
+                </android.support.v7.widget.RecyclerView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gray_outline"
+                    android:orientation="vertical"
+                    android:layout_margin="@dimen/margin_10">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/base_fare"
+                        android:fontFamily="@font/bold"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_16"
+                        android:padding="@dimen/padding_10"/>
+
+                    <RelativeLayout
+                        android:id="@+id/adult_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/padding_10"
+                        android:paddingRight="@dimen/padding_10">
+
+                        <TextView
+                            android:id="@+id/adult_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2 AD (1 x 1234)"
+                            android:fontFamily="@font/light"
+                            android:textSize="@dimen/text_12"
+                            android:layout_centerVertical="true"/>
+
+                        <TextView
+                            android:id="@+id/adult_base_fare"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/light"
+                            android:textSize="@dimen/text_16"
+                            android:layout_alignParentRight="true"
+                            android:textColor="@color/orange_text"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/child_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/padding_10"
+                        android:paddingRight="@dimen/padding_10"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/child_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1 CH (1 x 1234)"
+                            android:fontFamily="@font/light"
+                            android:textSize="@dimen/text_12"
+                            android:layout_centerVertical="true"/>
+
+                        <TextView
+                            android:id="@+id/child_base_fare"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rs. 2468"
+                            android:fontFamily="@font/light"
+                            android:textSize="@dimen/text_16"
+                            android:layout_alignParentRight="true"
+                            android:textColor="@color/orange_text"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/infant_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/padding_10"
+                        android:paddingRight="@dimen/padding_10"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/infant_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1 CH (1 x 1234)"
+                            android:fontFamily="@font/light"
+                            android:textSize="@dimen/text_12"
+                            android:layout_centerVertical="true"/>
+
+                        <TextView
+                            android:id="@+id/infant_base_fare"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rs. 2468"
+                            android:fontFamily="@font/light"
+                            android:textSize="@dimen/text_16"
+                            android:layout_alignParentRight="true"
+                            android:textColor="@color/orange_text"/>
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/width_01"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:background="@color/gray"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/taxes"
+                        android:fontFamily="@font/bold"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_16"
+                        android:padding="@dimen/padding_10"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/padding_10"
+                        android:paddingRight="@dimen/padding_10">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tax_fees"
+                            android:fontFamily="@font/light"
+                            android:textSize="@dimen/text_12"/>
+
+                        <TextView
+                            android:id="@+id/tax_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rs. 500"
+                            android:fontFamily="@font/light"
+                            android:textSize="@dimen/text_16"
+                            android:layout_alignParentRight="true"
+                            android:textColor="@color/orange_text"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/padding_10"
+                        android:paddingRight="@dimen/padding_10"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_marginBottom="@dimen/margin_10"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/convenience_fee"
+                            android:fontFamily="@font/light"
+                            android:textSize="@dimen/text_12"/>
+
+                        <TextView
+                            android:id="@+id/convenience_fee"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rs. 0"
+                            android:fontFamily="@font/light"
+                            android:textSize="@dimen/text_16"
+                            android:layout_alignParentRight="true"
+                            android:textColor="@color/orange_text"/>
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="@drawable/gray_bottom_curved">
+                        
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:text="@string/grand_total"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/regular"
+                            android:padding="@dimen/padding_10"/>
+
+                        <TextView
+                            android:id="@+id/grand_total_price"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:text="Rs. 2698"
+                            android:textColor="@color/orange_text"
+                            android:fontFamily="@font/bold"
+                            android:gravity="right"
+                            android:padding="@dimen/padding_10"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</LinearLayout>

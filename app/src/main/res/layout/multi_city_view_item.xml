@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/one_round_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginRight="@dimen/margin_5"
+        android:layout_marginLeft="@dimen/margin_5">
+
+        <TextView
+            android:id="@+id/from_city"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:fontFamily="@font/regular"
+            android:background="@drawable/white_butten"
+            android:hint="from city"
+            android:drawableTint="@color/colorPrimary"
+            android:textStyle="bold"
+            android:paddingLeft="@dimen/padding_15"
+            android:paddingTop="@dimen/padding_5"
+            android:paddingBottom="@dimen/padding_5"
+            android:paddingRight="@dimen/padding_15"
+            android:layout_marginRight="@dimen/margin_5"
+            android:drawableLeft="@drawable/ic_flight_from"
+            android:gravity="center_vertical"
+            android:drawablePadding="@dimen/padding_10"/>
+
+        <TextView
+            android:id="@+id/to_city"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:background="@drawable/white_butten"
+            android:drawableLeft="@drawable/ic_flight_to"
+            android:drawablePadding="@dimen/padding_10"
+            android:fontFamily="@font/regular"
+            android:gravity="center_vertical"
+            android:hint="to city"
+            android:drawableTint="@color/colorPrimary"
+            android:textStyle="bold"
+            android:paddingBottom="@dimen/padding_5"
+            android:paddingLeft="@dimen/padding_15"
+            android:paddingRight="@dimen/padding_15"
+            android:paddingTop="@dimen/padding_5" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_marginLeft="@dimen/margin_5">
+
+        <TextView
+            android:id="@+id/select_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/regular"
+            android:background="@drawable/white_butten"
+            android:hint="@string/departure_date"
+            android:paddingLeft="@dimen/padding_15"
+            android:paddingTop="@dimen/padding_5"
+            android:paddingBottom="@dimen/padding_5"
+            android:paddingRight="@dimen/padding_15"
+            android:drawableTint="@color/colorPrimary"
+            android:drawableLeft="@drawable/ic_calendar"
+            android:gravity="center_vertical"
+            android:drawablePadding="@dimen/padding_10"
+            android:layout_toLeftOf="@+id/remove_item"/>
+
+        <ImageView
+            android:id="@+id/remove_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_20"
+            android:layout_marginRight="@dimen/margin_20"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_close_action"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/width_01"
+        android:background="@color/gray"
+        android:layout_margin="@dimen/margin_10"/>
+
+</LinearLayout>

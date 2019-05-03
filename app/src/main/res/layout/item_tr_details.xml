@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txtHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        android:fontFamily="@font/medium"
+        android:paddingBottom="@dimen/padding_10"
+        android:paddingLeft="@dimen/padding_5"
+        android:paddingTop="@dimen/padding_10"
+        android:text="Adult 1"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_16" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_10"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:fontFamily="@font/regular"
+            android:padding="@dimen/padding_5"
+            android:text="Title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_16"
+
+            />
+
+        <Spinner
+            android:id="@+id/spinnerTitle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"></Spinner>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_10"
+        android:layout_marginRight="@dimen/padding_10"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:fontFamily="@font/regular"
+            android:padding="@dimen/padding_5"
+            android:text="First Name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_16"
+
+            />
+
+        <EditText
+            android:id="@+id/edFirstName"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@null"
+            android:hint="First Name"
+            android:inputType="textPersonName" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_10"
+        android:layout_marginRight="@dimen/padding_10"
+        android:layout_marginTop="@dimen/padding_10"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:fontFamily="@font/regular"
+            android:padding="@dimen/padding_5"
+            android:text="Last Name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_16"
+
+            />
+
+        <EditText
+            android:id="@+id/edLastName"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@null"
+            android:hint="Last Name"
+            android:inputType="textPersonName" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/padding_10">
+
+        <LinearLayout
+            android:id="@+id/llWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_10"
+            android:layout_marginRight="@dimen/padding_10"
+            android:layout_marginTop="@dimen/padding_10"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.1"
+                android:fontFamily="@font/regular"
+                android:padding="@dimen/padding_5"
+                android:text="Weight"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_16"
+
+                />
+
+            <EditText
+
+                android:id="@+id/etWeight"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                android:background="@null"
+                android:hint="Weight"
+                android:inputType="number" />
+
+            <Spinner
+                android:id="@+id/spinner_weight_type"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.2" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llHeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_10"
+            android:layout_marginRight="@dimen/padding_10"
+            android:layout_marginTop="@dimen/padding_10"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.1"
+                android:fontFamily="@font/regular"
+                android:padding="@dimen/padding_5"
+                android:text="Height"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_16"
+
+                />
+
+            <EditText
+                android:id="@+id/etHeight"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                android:background="@null"
+                android:hint="Height"
+                android:inputType="number" />
+
+            <Spinner
+                android:id="@+id/spinner_Height_type"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.2" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llDOB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_10"
+            android:layout_marginRight="@dimen/padding_10"
+            android:layout_marginTop="@dimen/padding_10"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.1"
+                android:fontFamily="@font/regular"
+                android:padding="@dimen/padding_5"
+                android:text="Date Of Birth "
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_16"
+
+                />
+
+            <TextView
+                android:id="@+id/txtDOB"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:hint="DOB" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llPassportExpire"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_10"
+            android:layout_marginRight="@dimen/padding_10"
+            android:layout_marginTop="@dimen/padding_10"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.1"
+                android:fontFamily="@font/regular"
+                android:padding="@dimen/padding_5"
+                android:text="Possport Expire"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_16"
+
+                />
+
+            <TextView
+                android:id="@+id/txtPassposrt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:hint="Passport Expire Date" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

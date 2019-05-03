@@ -1,0 +1,27 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:background="@color/segment_bg"
+    tools:context="com.mytripbazar.transfers.fragment.TransfersResultFragment">
+    <TextView
+        android:id="@+id/location_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bangalore"
+        android:background="@drawable/blue_gradient"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_16"
+        android:padding="@dimen/padding_10"
+        />
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@+id/location_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rv_transfers">
+
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

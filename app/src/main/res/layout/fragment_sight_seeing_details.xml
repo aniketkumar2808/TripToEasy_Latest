@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        android:visibility="gone"/>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/txtCheckAvl"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivPropPic"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/width_150"
+                android:scaleType="fitXY"
+                app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/padding_20"
+                android:layout_marginLeft="@dimen/padding_20"
+                android:layout_marginRight="@dimen/padding_20"
+                android:layout_marginTop="-30dp"
+                android:background="@drawable/bg_comment_txt"
+                android:visibility="visible"
+
+                >
+
+
+                <TextView
+                    android:id="@+id/txtPLName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_5"
+                    android:layout_marginTop="@dimen/padding_5"
+                    android:fontFamily="@font/bold"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_18"
+                    app:layout_constraintEnd_toStartOf="@id/txtViewReviews"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtPLLocation"
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_5"
+                    android:layout_marginTop="@dimen/padding_5"
+                    android:text=""
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="@id/txtPLName"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtPLName" />
+
+                <TextView
+                    android:id="@+id/txtDuration"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_5"
+                    android:layout_marginTop="@dimen/padding_2"
+                    android:text=" "
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="@id/txtPLName"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtPLLocation" />
+
+
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    style="@style/Base.Widget.AppCompat.RatingBar.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="@dimen/padding_5"
+                    android:numStars="5"
+                    android:theme="@style/RatingBar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    />
+
+                <TextView
+                    android:id="@+id/txtViewReviews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/padding_5"
+                    android:layout_marginTop="@dimen/padding_2"
+                    android:fontFamily="@font/regular"
+                    android:text="View all Ratings"
+                    android:textColor="@color/blue_right"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ratingBar" />
+
+
+                <TextView
+                    android:id="@+id/txtReviewsCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/padding_5"
+                    android:layout_marginTop="@dimen/padding_2"
+                    android:fontFamily="@font/regular"
+                    android:text=""
+                    android:textColor="@color/blue_right"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtViewReviews" />
+
+                <LinearLayout
+                    android:id="@+id/llPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_2"
+                    android:background="@drawable/gray_bottom_curved"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/padding_5"
+                    app:layout_constraintTop_toBottomOf="@id/txtDuration">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:orientation="vertical"
+                        android:padding="@dimen/padding_5">
+
+                        <TextView
+                            android:id="@+id/txtAvlDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/point_start"
+                            android:drawablePadding="@dimen/padding_5"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_10" />
+
+                        <TextView
+                            android:id="@+id/txtInstant"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/padding_5"
+                            android:drawableLeft="@drawable/point_start"
+                            android:drawablePadding="@dimen/padding_5"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_10" />
+
+                        <TextView
+                            android:id="@+id/txtCancelStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/padding_5"
+                            android:drawableLeft="@drawable/point_start"
+                            android:drawablePadding="@dimen/padding_5"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_10" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtPriceHeader"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/regular"
+                            android:text="Best Price From"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_14" />
+
+                        <TextView
+                            android:id="@+id/txtBestPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/padding_2"
+                            android:fontFamily="@font/bold"
+                            android:text=""
+                            android:textColor="@color/orange_text"
+                            android:textSize="@dimen/text_16" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.constraint.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/colorPrimaryDark"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/llPrice">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtImpInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/medium"
+                        android:gravity="center"
+                        android:text="Important Info"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_16"
+
+                        />
+
+                    <View
+                        android:id="@+id/view1"
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:background="@color/white" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtOverView"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/medium"
+                        android:gravity="center"
+                        android:text="Over view"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_16"
+
+                        />
+
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:background="@color/white"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llDetails"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/medium"
+                        android:gravity="center"
+                        android:text="Details"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_16"
+
+                        />
+
+                    <View
+                        android:id="@+id/view3"
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:background="@color/white"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/txtTabType"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/width_40"
+                android:background="@color/gray"
+                android:fontFamily="@font/medium"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/padding_5"
+                android:text="Important Information"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_16" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvImpInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                />
+
+
+            <TextView
+                android:id="@+id/txtOVDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/padding_10"
+                android:background="@drawable/bg_comment"
+                android:padding="@dimen/padding_5"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_14"
+                android:visibility="gone"
+
+                />
+
+            <TextView
+                android:id="@+id/txtDetailsVal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/padding_10"
+                android:background="@drawable/bg_comment"
+                android:padding="@dimen/padding_5"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_14"
+                android:visibility="gone"
+
+                />
+
+
+            <TextView
+                android:id="@+id/txtReviewTitle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/width_40"
+                android:background="@color/gray"
+                android:fontFamily="@font/medium"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/padding_5"
+                android:layout_marginTop="@dimen/padding_2"
+                android:text="Customer Reviews"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_16" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvReviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <TextView
+        android:id="@+id/txtCheckAvl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/width_40"
+        android:background="@color/colorPrimaryDark"
+        android:fontFamily="@font/medium"
+        android:gravity="center"
+        android:text="Check Availability"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_18"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        />
+
+
+</android.support.constraint.ConstraintLayout>

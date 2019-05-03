@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <android.support.v7.widget.CardView
+      android:layout_width="250dp"
+      android:layout_height="140dp"
+      android:layout_centerHorizontal="true"
+      android:layout_margin="@dimen/margin_5"
+      app:cardCornerRadius="@dimen/margin_10"
+      >
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:scaleType="fitXY">
+          <ImageView
+              android:id="@+id/iv_promoImage"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:scaleType="fitXY"/>
+
+          <TextView
+              android:id="@+id/tv_promoDescription"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="@color/white"
+              android:text="hi"
+              android:layout_centerInParent="true"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_promoDescription"
+            android:background="@drawable/white_outline"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_5"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="CODE"
+                android:padding="@dimen/elevation_2"
+                android:background="@color/white"
+
+                />
+            <TextView
+                android:id="@+id/tv_promoCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="hGDDD121i"
+                android:textAllCaps="true"
+                android:padding="@dimen/elevation_2"
+                />
+
+        </LinearLayout>
+      </RelativeLayout>
+  </android.support.v7.widget.CardView>
+</RelativeLayout>

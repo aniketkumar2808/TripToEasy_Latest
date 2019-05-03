@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/all_page_bg"
+    android:clickable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+       <!-- <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/banner_view"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_hotel_icon"
+                android:layout_marginBottom="@dimen/margin_10"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/city"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_16"
+                android:fontFamily="@font/regular"/>
+
+            <TextView
+                android:id="@+id/search_city_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_18"
+                android:fontFamily="@font/bold"
+                android:layout_marginTop="@dimen/margin_10"/>
+
+        </LinearLayout>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_10"
+            android:layout_marginTop="@dimen/padding_30"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/city_name"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/regular"
+                android:background="@drawable/white_butten"
+                android:hint="@string/city_name"
+                android:padding="@dimen/padding_15"
+                android:layout_marginRight="@dimen/margin_5"
+                android:gravity="center_vertical"
+                android:drawableTint="@color/colorPrimary"
+                android:drawableLeft="@drawable/ic_location"
+                android:drawablePadding="@dimen/padding_10"/>
+
+            <LinearLayout
+                android:id="@+id/date_picker_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin_20">
+
+                <LinearLayout
+                    android:id="@+id/check_in"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical"
+                    android:layout_marginRight="@dimen/margin_5"
+                    android:background="@drawable/gray_outline">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/check_in"
+                        android:fontFamily="@font/regular"
+                        android:textSize="@dimen/text_12"
+                        android:drawableLeft="@drawable/ic_calendar_indicator"
+                        android:gravity="center_vertical"
+                        android:drawablePadding="@dimen/padding_10"
+                        android:paddingLeft="@dimen/padding_15"
+                        android:paddingRight="@dimen/padding_15"
+                        android:paddingTop="@dimen/padding_5"
+                        android:paddingBottom="@dimen/padding_5"
+                        android:background="@drawable/gray_top_curved"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/week_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/black"
+                            android:text="Friday"
+                            android:paddingLeft="@dimen/padding_15"
+                            android:paddingTop="@dimen/padding_5"
+                            android:paddingBottom="@dimen/padding_5"
+                            android:paddingRight="@dimen/padding_15"
+                            android:gravity="center"
+                            android:textSize="@dimen/text_14" />
+
+                        <TextView
+                            android:id="@+id/date_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/bold"
+                            android:text="02"
+                            android:paddingLeft="@dimen/padding_15"
+                            android:paddingTop="@dimen/padding_5"
+                            android:paddingBottom="@dimen/padding_5"
+                            android:paddingRight="@dimen/padding_15"
+                            android:gravity="center"
+                            android:textSize="@dimen/text_14"
+                            android:textColor="@color/blue_text"/>
+
+                        <!--<TextView
+                            android:id="@+id/month_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/black"
+                            android:text="March"
+                            android:paddingLeft="@dimen/padding_15"
+                            android:paddingTop="@dimen/padding_5"
+                            android:paddingBottom="@dimen/padding_5"
+                            android:paddingRight="@dimen/padding_15"
+                            android:gravity="center"
+                            android:textSize="@dimen/text_14" />-->
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/check_out"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="@dimen/margin_5"
+                    android:background="@drawable/gray_outline">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/check_out"
+                        android:fontFamily="@font/regular"
+                        android:textSize="@dimen/text_12"
+                        android:drawableLeft="@drawable/ic_calendar_indicator"
+                        android:gravity="center_vertical"
+                        android:drawablePadding="@dimen/padding_10"
+                        android:paddingLeft="@dimen/padding_15"
+                        android:paddingRight="@dimen/padding_15"
+                        android:paddingTop="@dimen/padding_5"
+                        android:paddingBottom="@dimen/padding_5"
+                        android:background="@drawable/gray_top_curved"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/to_week_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/black"
+                            android:text="Friday"
+                            android:paddingLeft="@dimen/padding_15"
+                            android:paddingTop="@dimen/padding_5"
+                            android:paddingBottom="@dimen/padding_5"
+                            android:paddingRight="@dimen/padding_15"
+                            android:gravity="center"
+                            android:textSize="@dimen/text_14" />
+
+                        <TextView
+                            android:id="@+id/to_date_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/bold"
+                            android:text="02"
+                            android:paddingLeft="@dimen/padding_15"
+                            android:paddingTop="@dimen/padding_5"
+                            android:paddingBottom="@dimen/padding_5"
+                            android:paddingRight="@dimen/padding_15"
+                            android:gravity="center"
+                            android:textSize="@dimen/text_14"
+                            android:textColor="@color/blue_text"/>
+
+                      <!--  <TextView
+                            android:id="@+id/to_month_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/black"
+                            android:text="March"
+                            android:paddingLeft="@dimen/padding_15"
+                            android:paddingTop="@dimen/padding_5"
+                            android:paddingBottom="@dimen/padding_5"
+                            android:paddingRight="@dimen/padding_15"
+                            android:gravity="center"
+                            android:textSize="@dimen/text_14" />-->
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/night_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/regular"
+                android:background="@drawable/white_butten"
+                android:hint="@string/night_count"
+                android:padding="@dimen/padding_15"
+                android:layout_marginRight="@dimen/margin_5"
+                android:gravity="center_vertical"
+                android:layout_marginTop="@dimen/margin_10"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin_10">
+
+                <LinearLayout
+                    android:id="@+id/guest_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical"
+                    android:layout_marginRight="@dimen/margin_5"
+                    android:background="@drawable/gray_outline">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/guests"
+                        android:fontFamily="@font/regular"
+                        android:textSize="@dimen/text_12"
+                        android:drawableLeft="@drawable/ic_traveller_indicator"
+                        android:gravity="center_vertical"
+                        android:drawablePadding="@dimen/padding_10"
+                        android:paddingLeft="@dimen/padding_15"
+                        android:paddingRight="@dimen/padding_15"
+                        android:paddingTop="@dimen/padding_5"
+                        android:paddingBottom="@dimen/padding_5"
+                        android:background="@drawable/gray_top_curved"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/passenger_count"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/regular"
+                            android:text="01"
+                            android:paddingLeft="@dimen/padding_15"
+                            android:paddingTop="@dimen/padding_5"
+                            android:paddingBottom="@dimen/padding_5"
+                            android:paddingRight="@dimen/padding_15"
+                            android:gravity="center"
+                            android:textSize="@dimen/text_18"
+                            android:textColor="@color/blue_text"/>
+
+                        <TextView
+                            android:id="@+id/passenger_detail_count"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/black"
+                            android:text="01 AD 00 CH"
+                            android:paddingLeft="@dimen/padding_15"
+                            android:paddingTop="@dimen/padding_5"
+                            android:paddingBottom="@dimen/padding_5"
+                            android:paddingRight="@dimen/padding_15"
+                            android:gravity="center"
+                            android:textSize="@dimen/text_14" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/room_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="@dimen/margin_5"
+                    android:background="@drawable/gray_outline">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rooms"
+                        android:fontFamily="@font/regular"
+                        android:textSize="@dimen/text_12"
+                        android:drawableLeft="@drawable/ic_room_indicator"
+                        android:gravity="center_vertical"
+                        android:drawablePadding="@dimen/padding_10"
+                        android:paddingLeft="@dimen/padding_15"
+                        android:paddingRight="@dimen/padding_15"
+                        android:paddingTop="@dimen/padding_5"
+                        android:paddingBottom="@dimen/padding_5"
+                        android:background="@drawable/gray_top_curved"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/room_count"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/regular"
+                            android:text="01"
+                            android:paddingLeft="@dimen/padding_15"
+                            android:paddingTop="@dimen/padding_5"
+                            android:paddingBottom="@dimen/padding_5"
+                            android:paddingRight="@dimen/padding_15"
+                            android:gravity="center"
+                            android:textSize="@dimen/text_18"
+                            android:textColor="@color/blue_text"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/black"
+                            android:text="Room"
+                            android:paddingLeft="@dimen/padding_15"
+                            android:paddingTop="@dimen/padding_5"
+                            android:paddingBottom="@dimen/padding_5"
+                            android:paddingRight="@dimen/padding_15"
+                            android:gravity="center"
+                            android:textSize="@dimen/text_14" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/search_hotel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_10"
+                android:text="@string/search"
+                android:textColor="@color/white"
+                android:fontFamily="@font/bold"
+                android:background="@drawable/blue_butten"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/margin_10"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

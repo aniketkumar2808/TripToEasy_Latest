@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Promocode"
+        android:gravity="center"
+        android:textSize="@dimen/text_16"
+        android:fontFamily="@font/bold"
+        android:textColor="@color/white"
+        android:background="@color/blue_text"
+        android:padding="@dimen/padding_10"
+        />
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rv_promolist">
+
+    </android.support.v7.widget.RecyclerView>
+    <TextView
+        android:id="@+id/tv_close"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Close"
+        android:gravity="center"
+        android:textSize="@dimen/text_16"
+        android:fontFamily="@font/bold"
+        android:textColor="@color/white"
+        android:background="@color/orange_text"
+        android:padding="@dimen/padding_10"
+        />
+</LinearLayout>

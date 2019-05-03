@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/all_page_bg"
+
+    tools:context=".PromoDetailActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tv_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="description"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:background="@color/colorPrimary"
+                    android:textSize="@dimen/text_18"
+                    android:gravity="center"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:weightSum="1">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.50"
+                        android:layout_height="wrap_content"
+                        android:text="USE COUPON :"
+                        android:gravity="right"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:id="@+id/tv_couponCode"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.50"
+                        android:layout_height="wrap_content"
+                        android:text="12DMKSLDF"
+                        android:paddingLeft="@dimen/margin_10"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:weightSum="1">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.50"
+                        android:layout_height="wrap_content"
+                        android:text="Valid till :"
+                        android:gravity="right"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:id="@+id/tv_validDate"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.50"
+                        android:layout_height="wrap_content"
+                        android:text="12DMKSLDF"
+                        android:paddingLeft="@dimen/margin_10"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="@dimen/margin_10"
+                    android:background="@drawable/gray_outline"
+                    android:weightSum="1">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="How do you get it?"
+                        android:padding="@dimen/margin_10"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_14"
+                        android:background="@color/gray"/>
+                    <TextView
+                        android:id="@+id/tv_howGet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="12DMKSLDF"
+                        android:padding="@dimen/margin_10"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="@dimen/margin_10"
+                    android:background="@drawable/gray_outline"
+                    android:weightSum="1">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="What else do you need to know?"
+                        android:padding="@dimen/margin_10"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_14"
+                        android:background="@color/gray"/>
+                    <TextView
+                        android:id="@+id/tv_whatElse"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="12DMKSLDF"
+                        android:padding="@dimen/margin_10"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="@dimen/margin_10"
+                    android:background="@drawable/gray_outline"
+                    android:weightSum="1">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Terms &amp; Conditions"
+                        android:padding="@dimen/margin_10"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_14"
+                        android:background="@color/gray"/>
+                    <TextView
+                        android:id="@+id/tv_tc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="12DMKSLDF"
+                        android:padding="@dimen/margin_10"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_arrow_back"
+            android:padding="7dp"
+            android:backgroundTint="@color/white"
+            />
+
+    </RelativeLayout>
+    </ScrollView>
+
+
+</LinearLayout>

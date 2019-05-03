@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/super_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/all_page_bg"
+    android:clickable="true">
+
+    <RelativeLayout
+        android:id="@+id/bottom_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/blue_text"
+        android:padding="@dimen/margin_10">
+
+        <TextView
+            android:id="@+id/send_query"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/send_query"
+            android:textColor="@color/blue_text"
+            android:background="@drawable/white_butten"
+            android:paddingLeft="@dimen/margin_10"
+            android:paddingTop="@dimen/padding_5"
+            android:paddingRight="@dimen/padding_10"
+            android:paddingBottom="@dimen/padding_5"
+            android:fontFamily="@font/bold"
+            android:layout_marginRight="@dimen/text_10"
+            android:textSize="@dimen/text_18"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/tv_bookHoliday"/>
+        <TextView
+            android:id="@+id/tv_bookHoliday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/book"
+            android:textColor="@color/blue_text"
+            android:background="@drawable/white_butten"
+            android:paddingLeft="@dimen/margin_10"
+            android:paddingTop="@dimen/padding_5"
+            android:paddingRight="@dimen/padding_10"
+            android:paddingBottom="@dimen/padding_5"
+            android:layout_alignParentRight="true"
+            android:fontFamily="@font/bold"
+            android:textSize="@dimen/text_18"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/text_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/grand_total"
+            android:textColor="@color/white"
+            android:fontFamily="@font/regular"
+            android:textSize="@dimen/text_14"/>
+
+        <TextView
+            android:id="@+id/total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rs. 2968"
+            android:textColor="@color/white"
+            android:fontFamily="@font/bold"
+            android:textSize="@dimen/text_16"
+            android:layout_below="@+id/text_one"
+            android:layout_marginTop="@dimen/margin_5"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/width_200">
+
+            <ImageView
+                android:id="@+id/holiday_bkg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_hotel_bg"
+                android:scaleType="fitXY"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_top_round"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_10"
+                android:layout_alignParentBottom="true">
+
+                <TextView
+                    android:id="@+id/holiday_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/bold"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_14"
+                    android:paddingLeft="@dimen/padding_10"
+                    android:paddingRight="@dimen/padding_10"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/margin_5">
+
+                    <TextView
+                        android:id="@+id/tour_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="2"
+                        android:layout_toLeftOf="@+id/hotel_rating"
+                        android:layout_marginLeft="@dimen/margin_10"
+                        android:paddingBottom="@dimen/padding_10"
+                        android:textSize="@dimen/text_12"/>
+
+                    <RatingBar
+                        android:id="@+id/holiday_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        android:stepSize="1"
+                        android:theme="@style/RatingBar"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gray_bottom_curved"
+            android:padding="@dimen/padding_10"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_10">
+
+            <TextView
+                android:id="@+id/package_duration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5Night's and 6 Days"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_12"
+                android:fontFamily="@font/regular"
+                android:layout_toLeftOf="@+id/price_per_person"
+                android:layout_marginRight="@dimen/margin_10"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:id="@+id/price_per_person"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/orange_text"
+                android:text="Rs. 12458"
+                android:fontFamily="@font/regular"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/price_per_person"
+                android:text="Per Person"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_view">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottom_sheet"
+            android:orientation="vertical"
+            android:clipToPadding="true"
+            android:background="@color/all_page_bg"
+            app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toolbar_height"
+                android:background="@color/blue_text">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_scrollFlags="scroll|enterAlways">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <RelativeLayout
+                            android:id="@+id/over_view_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.3">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_scrollup"
+                                android:layout_centerVertical="true"/>
+
+                            <TextView
+                                android:id="@+id/over_view"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Overview"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/regular"
+                                android:textSize="@dimen/text_12"
+                                android:layout_centerVertical="true"/>
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/itinerary"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.3"
+                            android:text="Detailed Itinerary"
+                            android:gravity="center"
+                            android:textColor="@color/black_sixty"
+                            android:fontFamily="@font/regular"
+                            android:textSize="@dimen/text_12"/>
+
+                        <TextView
+                            android:id="@+id/gallery_view"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.3"
+                            android:text="Gallery"
+                            android:gravity="center"
+                            android:textColor="@color/black_sixty"
+                            android:fontFamily="@font/regular"
+                            android:textSize="@dimen/text_12"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.design.widget.AppBarLayout>
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/over_view_main"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/gray_outline"
+                        android:layout_margin="@dimen/margin_10">
+
+                        <TextView
+                            android:id="@+id/over_view_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/padding_10"
+                            android:text="Over View Of Package"
+                            android:background="@drawable/gray_top_curved"
+                            android:maxLines="1"
+                            android:ellipsize="end"/>
+
+                        <TextView
+                            android:id="@+id/over_view_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dummy_text"
+                            android:padding="@dimen/padding_10"
+                            android:textSize="@dimen/text_12"
+                            android:textColor="@color/black"/>
+
+                    </LinearLayout>
+
+                    <!--
+                    Itinerary - Linear Layout
+                    Gallery - grid layout
+                    -->
+                    <LinearLayout
+                        android:id="@+id/itinerary_gallery_main"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/gray_outline"
+                        android:layout_margin="@dimen/margin_10"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/itinerary_gallery_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/padding_10"
+                            android:text="Over View Of Package"
+                            android:background="@drawable/gray_top_curved"
+                            android:maxLines="1"
+                            android:ellipsize="end"/>
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/list_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        </android.support.v7.widget.RecyclerView>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+        </LinearLayout>
+    </android.support.design.widget.CoordinatorLayout>
+
+</RelativeLayout>

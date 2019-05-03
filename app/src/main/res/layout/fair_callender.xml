@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/all_page_bg"
+    android:clickable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/orange_text">
+        
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="Select Month"
+                android:fontFamily="@font/regular"
+                android:textSize="@dimen/text_16"
+                android:padding="@dimen/padding_5"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="March"
+                android:fontFamily="@font/bold"
+                android:textSize="@dimen/text_18"
+                android:paddingLeft="@dimen/padding_5"
+                android:paddingBottom="@dimen/padding_5"/>
+            
+        </LinearLayout>
+        
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/white"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="Select Year"
+                android:fontFamily="@font/regular"
+                android:textSize="@dimen/text_16"
+                android:padding="@dimen/padding_5"
+                android:gravity="end"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="2018"
+                android:fontFamily="@font/bold"
+                android:textSize="@dimen/text_18"
+                android:paddingRight="@dimen/padding_5"
+                android:paddingBottom="@dimen/padding_5"
+                android:gravity="end"/>
+            
+        </LinearLayout>
+    </LinearLayout>
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get Fair"
+        android:background="@drawable/blue_gradient"
+        android:layout_marginTop="@dimen/margin_10"
+        android:padding="@dimen/padding_10"
+        android:textColor="@color/white"
+        android:gravity="center"/>
+
+    <!--
+    Grid Layout manager with 7 column
+    -->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/calender_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

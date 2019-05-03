@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/padding_5"
+    android:background="@drawable/grey_border_bg">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+
+        android:id="@+id/ivUserPic"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="@dimen/padding_10"
+        android:layout_marginTop="@dimen/padding_10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtUserName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_5"
+        android:layout_marginTop="@dimen/padding_10"
+        android:fontFamily="@font/medium"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivUserPic"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        style="@style/Base.Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/padding_5"
+        android:numStars="5"
+        android:theme="@style/RatingBar"
+        app:layout_constraintStart_toStartOf="@id/txtUserName"
+        app:layout_constraintTop_toBottomOf="@id/txtUserName" />
+
+    <TextView
+        android:id="@+id/txtPubDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_5"
+        android:gravity="end"
+        android:paddingRight="@dimen/padding_5"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ratingBar"
+        app:layout_constraintTop_toBottomOf="@id/txtUserName" />
+
+    <TextView
+        android:id="@+id/txtUserComment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/padding_10"
+        android:layout_marginLeft="@dimen/padding_15"
+        android:layout_marginRight="@dimen/padding_10"
+        android:layout_marginTop="@dimen/padding_5"
+        android:fontFamily="@font/regular"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivUserPic"
+
+        />
+
+
+</android.support.constraint.ConstraintLayout>

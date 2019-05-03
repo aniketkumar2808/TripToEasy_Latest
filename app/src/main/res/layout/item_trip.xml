@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/padding_10"
+    android:background="@drawable/gray_outline"
+
+
+    >
+
+    <LinearLayout
+        android:id="@+id/llHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gray_top_curved"
+        android:orientation="horizontal"
+
+        android:paddingBottom="@dimen/padding_15"
+        android:paddingTop="@dimen/padding_15">
+
+        <TextView
+            android:id="@+id/txtTrName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="@dimen/padding_15"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_16" />
+
+        <TextView
+            android:id="@+id/txtTrCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/padding_20"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_16" />
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/txtDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_10"
+        android:layout_marginRight="@dimen/padding_10"
+        android:layout_marginTop="@dimen/padding_5"
+        android:fontFamily="@font/regular"
+        android:text="Description"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llHeader" />
+
+    <TextView
+        android:id="@+id/txtDeparture"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_10"
+        android:layout_marginRight="@dimen/padding_10"
+        android:layout_marginTop="@dimen/padding_5"
+        android:fontFamily="@font/regular"
+        android:text="Departure"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtDescription" />
+
+    <TextView
+        android:id="@+id/txtTotalTra"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_10"
+        android:layout_marginRight="@dimen/padding_10"
+        android:layout_marginTop="@dimen/padding_5"
+        android:fontFamily="@font/regular"
+        android:text="Departure"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtDeparture" />
+
+    <TextView
+        android:id="@+id/txtLanguage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_10"
+        android:layout_marginRight="@dimen/padding_10"
+        android:layout_marginTop="@dimen/padding_5"
+        android:fontFamily="@font/regular"
+        android:text="Languages service"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTotalTra" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="@dimen/padding_5"
+        android:background="@color/gray"
+        app:layout_constraintTop_toBottomOf="@id/txtLanguage">
+
+    </View>
+
+
+    <TextView
+        android:id="@+id/txtBestPrice"
+        android:layout_width="@dimen/width_150"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_5"
+        android:gravity="center"
+        android:text="Best Price From"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view" />
+
+    <TextView
+        android:id="@+id/txtPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_5"
+        android:fontFamily="@font/medium"
+        android:text="Rs 150"
+        android:textColor="@color/orange_text"
+        android:textSize="@dimen/text_18"
+        app:layout_constraintEnd_toEndOf="@id/txtBestPrice"
+        app:layout_constraintStart_toStartOf="@id/txtBestPrice"
+        app:layout_constraintTop_toBottomOf="@id/txtBestPrice"
+
+        />
+
+    <Button
+        android:id="@+id/btnBookNow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/padding_5"
+        android:layout_marginLeft="@dimen/padding_10"
+        android:layout_marginTop="@dimen/padding_5"
+        android:background="@drawable/bg_solid_blue"
+        android:fontFamily="@font/medium"
+        android:paddingLeft="@dimen/padding_30"
+        android:paddingRight="@dimen/padding_30"
+        android:text="Book Now"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view" />
+
+
+</android.support.constraint.ConstraintLayout>

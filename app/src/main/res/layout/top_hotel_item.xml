@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/width_150"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_margin="@dimen/margin_5">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="@dimen/width_150"
+        android:layout_height="@dimen/width_150"
+        app:cardCornerRadius="@dimen/margin_10">
+
+        <ImageView
+            android:id="@+id/package_image"
+            android:layout_width="@dimen/width_150"
+            android:layout_height="@dimen/width_150"
+            android:scaleType="fitXY"/>
+
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/city_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="destination name"
+        android:textColor="@color/black"
+        android:fontFamily="@font/regular"
+        android:textSize="@dimen/text_12"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_5"
+        android:padding="@dimen/padding_5"
+        android:gravity="center"
+        android:maxLines="2"
+        android:ellipsize="end"/>
+    <TextView
+        android:id="@+id/hotel_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hotels"
+        android:textColor="@color/black"
+        android:fontFamily="@font/regular"
+        android:textSize="@dimen/text_12"
+        android:layout_gravity="center"
+        android:paddingLeft="@dimen/padding_5"
+        android:paddingRight="@dimen/padding_5"
+        android:gravity="center"
+        android:maxLines="2"
+        android:ellipsize="end"/>
+
+</LinearLayout>
+
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_10">
+
+    <ImageView
+        android:id="@+id/package_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/width_150"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_home_page_banner_two"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/margin_10">
+
+        <TextView
+            android:id="@+id/city_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/orange_butten"
+            android:text="DUBAI"
+            android:textColor="@color/white"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/hotel_count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/orange_butten"
+            android:text="123"
+            android:textColor="@color/white"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+</RelativeLayout>-->

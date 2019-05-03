@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:background="@color/all_page_bg">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/top_view"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:gravity="center_vertical|center">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/padding_10">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/from"
+                android:textColor="@color/white"
+                android:fontFamily="@font/regular"/>
+
+            <TextView
+                android:id="@+id/from_city_display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:fontFamily="@font/bold"
+                android:textSize="@dimen/text_18"
+                android:layout_marginTop="@dimen/margin_10"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_15"
+            android:layout_marginRight="@dimen/margin_15"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/padding_10"
+            android:gravity="right">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/to"
+                android:textColor="@color/white"
+                android:fontFamily="@font/regular"/>
+
+            <TextView
+                android:id="@+id/to_city_display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:fontFamily="@font/bold"
+                android:textSize="@dimen/text_18"
+                android:layout_marginTop="@dimen/margin_10"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/top_view"
+        android:id="@+id/search"
+        android:padding="@dimen/padding_10">
+
+        <TextView
+            android:id="@+id/from_city_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/regular"
+            android:background="@drawable/white_butten"
+            android:hint="@string/from"
+            android:textStyle="bold"
+            android:padding="@dimen/padding_15"
+            android:layout_marginRight="@dimen/margin_5"
+            android:gravity="center_vertical"
+            android:drawableTint="@color/colorPrimary"
+            android:drawableLeft="@drawable/ic_location"
+            android:drawablePadding="@dimen/padding_10"/>
+
+        <ImageView
+            android:id="@+id/iv_swap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_swap_horiz"
+            android:tint="@color/colorPrimary"
+            android:layout_gravity="center"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/to_city_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/regular"
+            android:background="@drawable/white_butten"
+            android:hint="@string/to"
+            android:padding="@dimen/padding_15"
+            android:textStyle="bold"
+            android:layout_marginRight="@dimen/margin_5"
+            android:gravity="center_vertical"
+            android:drawableTint="@color/colorPrimary"
+            android:drawableLeft="@drawable/ic_location"
+            android:drawablePadding="@dimen/padding_10"
+            android:layout_marginTop="@dimen/margin_10"/>
+
+        <TextView
+            android:id="@+id/travel_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/regular"
+            android:background="@drawable/white_butten"
+            android:hint="@string/journey_date"
+            android:padding="@dimen/padding_15"
+            android:textStyle="bold"
+            android:layout_marginRight="@dimen/margin_5"
+            android:gravity="center_vertical"
+            android:drawableLeft="@drawable/ic_calendar_indicator"
+            android:drawablePadding="@dimen/padding_10"
+            android:drawableTint="@color/colorPrimary"
+            android:layout_marginTop="@dimen/margin_10"/>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/search_bus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_10"
+        android:text="@string/search"
+        android:textColor="@color/white"
+        android:fontFamily="@font/bold"
+        android:background="@drawable/blue_butten"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/margin_15"
+        android:layout_marginRight="@dimen/margin_15"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/search"
+
+       />
+
+    </LinearLayout>
+    </ScrollView>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/margin_10"
+    app:cardCornerRadius="@dimen/margin_15"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/package_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/width_100"
+            android:src="@drawable/ic_hotel_bg"
+            android:scaleType="centerCrop"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding_10">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.75"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/package_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Package Name"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/regular"
+                    android:textSize="@dimen/text_16"
+                    android:maxLines="1"/>
+
+                <TextView
+                    android:id="@+id/package_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:text="Tour Code - KAS02"
+                    android:textSize="@dimen/text_12"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/package_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rs. 2544/-"
+                    android:textColor="@color/orange_text"
+                    android:textSize="@dimen/text_16"/>
+
+                <TextView
+                    android:id="@+id/package_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:text="5 Nights/6 Days"
+                    android:textSize="@dimen/text_12"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gray"
+            android:paddingTop="@dimen/padding_5"
+            android:paddingBottom="@dimen/padding_5">
+
+            <TextView
+                android:id="@+id/location_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Location : Kashmir"
+                android:drawableLeft="@drawable/black_dot"
+                android:drawablePadding="@dimen/padding_10"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:fontFamily="@font/regular"
+                android:textSize="@dimen/text_12"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:maxLength="30"/>
+
+            <TextView
+                android:id="@+id/package_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Type : Kashmir Package Tours"
+                android:drawableLeft="@drawable/black_dot"
+                android:drawablePadding="@dimen/padding_10"
+                android:layout_below="@+id/location_name"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:fontFamily="@font/regular"
+                android:textSize="@dimen/text_12"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:maxLength="30"/>
+
+            <TextView
+                android:id="@+id/view_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View Details"
+                android:background="@drawable/blue_butten"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_10"
+                android:textColor="@color/white"
+                android:fontFamily="@font/bold"
+                android:paddingLeft="@dimen/padding_10"
+                android:paddingRight="@dimen/padding_10"
+                android:paddingTop="@dimen/padding_5"
+                android:paddingBottom="@dimen/padding_5"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

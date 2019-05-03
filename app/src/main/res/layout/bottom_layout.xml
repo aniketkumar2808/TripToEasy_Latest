@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_5"
+        android:background="@color/colorPrimary"
+        android:gravity="center">
+ <!--   <ImageView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="40dp"
+        android:layout_margin="@dimen/margin_5"
+        android:id="@+id/search_flight_bottom"
+        android:src="@drawable/ic_home_flight"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="40dp"
+        android:layout_margin="@dimen/margin_5"
+        android:id="@+id/search_hotel_bottom"
+        android:src="@drawable/ic_home_hotel"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="40dp"
+        android:layout_margin="@dimen/margin_5"
+        android:id="@+id/search_bus_bottom"
+        android:src="@drawable/ic_home_bus"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="40dp"
+        android:layout_margin="@dimen/margin_5"
+        android:id="@+id/search_holiday_bottom"
+        android:src="@drawable/ic_home_holiday"/>-->
+</LinearLayout>

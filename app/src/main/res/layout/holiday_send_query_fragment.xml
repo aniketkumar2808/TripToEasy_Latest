@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/all_page_bg"
+    android:clickable="true">
+
+    <TextView
+        android:id="@+id/package_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/blue_gradient"
+        android:padding="@dimen/padding_10"
+        android:text="Holiday Package Name"
+        android:textColor="@color/white"
+        android:fontFamily="@font/regular"/>
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_10"
+        android:background="@drawable/white_butten"
+        android:padding="@dimen/padding_10"
+        android:hint="Name*"
+        android:textColor="@color/black"
+        android:inputType="textPersonName"/>
+
+    <EditText
+        android:id="@+id/contact_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_marginRight="@dimen/margin_10"
+        android:layout_marginBottom="@dimen/margin_10"
+        android:background="@drawable/white_butten"
+        android:padding="@dimen/padding_10"
+        android:maxLength="10"
+        android:hint="Contact Number*"
+        android:textColor="@color/black"
+        android:inputType="phone"/>
+
+    <EditText
+        android:id="@+id/email_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_marginRight="@dimen/margin_10"
+        android:layout_marginBottom="@dimen/margin_10"
+        android:background="@drawable/white_butten"
+        android:padding="@dimen/padding_10"
+        android:hint="Email*"
+        android:textColor="@color/black"
+        android:inputType="textEmailAddress"/>
+
+    <EditText
+        android:id="@+id/departure_place"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_marginRight="@dimen/margin_10"
+        android:layout_marginBottom="@dimen/margin_10"
+        android:background="@drawable/white_butten"
+        android:padding="@dimen/padding_10"
+        android:hint="Departure Place*"
+        android:textColor="@color/black"
+        android:inputType="textPersonName"/>
+
+    <EditText
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_marginRight="@dimen/margin_10"
+        android:layout_marginBottom="@dimen/margin_10"
+        android:background="@drawable/white_butten"
+        android:padding="@dimen/padding_10"
+        android:hint="Message ( optional )"
+        android:textColor="@color/black"
+        android:inputType="textAutoComplete"/>
+
+    <TextView
+        android:id="@+id/send_query"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_10"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_marginRight="@dimen/margin_10"
+        android:background="@drawable/blue_butten"
+        android:text="Send Query"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:fontFamily="@font/regular"/>
+
+</LinearLayout>

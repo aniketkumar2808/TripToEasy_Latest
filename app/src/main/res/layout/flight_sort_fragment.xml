@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:background="@color/all_page_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_view"
+        android:orientation="horizontal"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_marginRight="@dimen/margin_10">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:drawableLeft="@drawable/ic_price"
+                android:drawablePadding="@dimen/padding_10"
+                android:text="Price"
+                android:drawableTint="@color/colorPrimary"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/text_16"/>
+
+            <TextView
+                android:id="@+id/starting_flight"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:drawableLeft="@drawable/ic_flight_from"
+                android:drawablePadding="@dimen/padding_10"
+                android:text="Departure"
+                android:drawableTint="@color/colorPrimary"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/text_16"/>
+
+            <TextView
+                android:id="@+id/return_flight"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:drawableLeft="@drawable/ic_flight_to"
+                android:drawablePadding="@dimen/padding_10"
+                android:text="Arrival"
+                android:drawableTint="@color/colorPrimary"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/text_16"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:drawablePadding="@dimen/padding_10"
+                android:text="Duration"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/text_16"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:drawablePadding="@dimen/padding_10"
+                android:text="Fare Type"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/text_16"/>
+    </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/price_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/price_low"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="right|center_vertical"
+                android:button="@null"
+                android:drawableTint="@color/colorPrimary"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/radio_button_drawable"
+                android:text="Lowest Price"
+                android:textColor="@color/black"
+                android:textSize="16dip"
+                android:layout_margin="@dimen/margin_5"
+                android:gravity="right|center_vertical" />
+
+            <RadioButton
+                android:id="@+id/price_high"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="right|center_vertical"
+                android:button="@null"
+                android:drawableTint="@color/colorPrimary"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/radio_button_drawable"
+                android:text="Highest Price"
+                android:textColor="@color/black"
+                android:textSize="16dip"
+                android:gravity="right|center_vertical"
+                android:layout_margin="@dimen/margin_5"
+                />
+            <RadioButton
+                android:id="@+id/dep_earliest"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="right|center_vertical"
+                android:button="@null"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/colorPrimary"
+                android:drawableRight="@drawable/radio_button_drawable"
+                android:text="Earliest Flight"
+                android:textColor="@color/black"
+                android:textSize="16dip"
+                android:gravity="right|center_vertical"
+                android:layout_margin="@dimen/margin_5"/>
+
+            <RadioButton
+                android:id="@+id/dep_latest"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="right|center_vertical"
+                android:button="@null"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/colorPrimary"
+                android:drawableRight="@drawable/radio_button_drawable"
+                android:text="Latest Flight"
+                android:textColor="@color/black"
+                android:textSize="16dip"
+                android:gravity="right|center_vertical"
+                android:layout_margin="@dimen/margin_5"
+               />
+            <RadioButton
+                android:id="@+id/arri_earliest"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="right|center_vertical"
+                android:button="@null"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/colorPrimary"
+                android:drawableRight="@drawable/radio_button_drawable"
+                android:text="Earliest Flight"
+                android:textColor="@color/black"
+                android:textSize="16dip"
+                android:gravity="right|center_vertical"
+                android:layout_margin="@dimen/margin_5"/>
+
+            <RadioButton
+                android:id="@+id/arri_latest"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="right|center_vertical"
+                android:button="@null"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/colorPrimary"
+                android:drawableRight="@drawable/radio_button_drawable"
+                android:text="Latest Flight"
+                android:textColor="@color/black"
+                android:textSize="16dip"
+                android:gravity="right|center_vertical"
+                android:layout_margin="@dimen/margin_5"
+                />
+
+            <RadioButton
+                android:id="@+id/fastest"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="right|center_vertical"
+                android:button="@null"
+                android:drawableTint="@color/colorPrimary"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/radio_button_drawable"
+                android:text="Fastest"
+                android:textColor="@color/black"
+                android:textSize="16dip"
+                android:gravity="right|center_vertical"
+                android:layout_margin="@dimen/margin_5"/>
+
+            <RadioButton
+                android:id="@+id/slow"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="right|center_vertical"
+                android:button="@null"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/radio_button_drawable"
+                android:text="Slow"
+                android:textColor="@color/black"
+                android:drawableTint="@color/colorPrimary"
+                android:textSize="16dip"
+                android:gravity="right|center_vertical"
+                android:layout_margin="@dimen/margin_5"/>
+
+            <RadioButton
+                android:id="@+id/refundable"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="right|center_vertical"
+                android:button="@null"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/colorPrimary"
+                android:drawableRight="@drawable/radio_button_drawable"
+                android:text="Refundable"
+                android:textColor="@color/black"
+                android:textSize="16dip"
+                android:gravity="right|center_vertical"
+                android:layout_margin="@dimen/margin_5"/>
+
+            <RadioButton
+                android:id="@+id/non_refundable"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="right|center_vertical"
+                android:button="@null"
+                android:drawableTint="@color/colorPrimary"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/radio_button_drawable"
+                android:text="Non-Refundable"
+                android:textColor="@color/black"
+                android:textSize="16dip"
+                android:gravity="right|center_vertical"
+                android:layout_margin="@dimen/margin_5"/>
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/margin_10"
+        android:layout_below="@+id/main_view">
+
+        <TextView
+            android:id="@+id/apply_sort"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:padding="@dimen/padding_10"
+            android:text="@string/save"
+            android:background="@color/blue_text"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_5"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/exit_sort"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:padding="@dimen/padding_10"
+            android:text="Reset"
+            android:background="@color/blue_text"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_5"
+            android:textColor="@color/white"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
