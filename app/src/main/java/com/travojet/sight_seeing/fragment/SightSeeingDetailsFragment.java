@@ -124,6 +124,7 @@ public class SightSeeingDetailsFragment extends BaseFragment implements WebInter
     int mSelChildCount = 0;
     int mSelInInfant = 0;
     JSONArray ProductAgeBands;
+    JSONObject tokenData;
 
     @OnClick(R.id.txtCheckAvl)
     public void showAval() {
@@ -419,13 +420,6 @@ public class SightSeeingDetailsFragment extends BaseFragment implements WebInter
                     txtOVDetails.setText(Html.fromHtml(lDataObj.getString("ShortDescription")));
                     txtDetailsVal.setText(Html.fromHtml(lDataObj.getString("Description")));
                     txtBestPrice.setText(Global.currencySymbol +" " +String.format("%.2f",(Double.parseDouble(lDataObj.getJSONObject("Price").getString("TotalDisplayFare"))/Double.parseDouble(Global.currencyValue))));
-
-
-
-
-
-
-
                     txtInstant.setText("Instant Confirmation");
                     CalAvlDate = lDataObj.getJSONArray("Calendar_available_date");
                     ProductAgeBands = lDataObj.getJSONArray("Product_AgeBands");
@@ -469,6 +463,8 @@ public class SightSeeingDetailsFragment extends BaseFragment implements WebInter
 
                     if (lDataObj.getInt("StarRating") > 0)
                         ratingBar.setRating(lDataObj.getInt("StarRating"));
+                    tokenData = lDataObj.getJSONObject("tokens_data");
+
                 }
 
 
@@ -512,6 +508,7 @@ public class SightSeeingDetailsFragment extends BaseFragment implements WebInter
                     }
                     Bundle bundle = new Bundle();
                     bundle.putInt("search_id", getArguments().getInt("search_id"));
+                    bundle.putString("tokenData", tokenData.toString());
                     bundle.putSerializable("trip_list", (Serializable) mTourgradeData);
 
                     intentAndFragmentService.fragmentDisplay(getActivity(), R.id.main_frame, new TripListFragment(), bundle, true);

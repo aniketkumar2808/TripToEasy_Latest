@@ -265,4 +265,9 @@
     <string name="amount_paid">Amount Paid</string>
     <string name="amount_added">Amount Added</string>
     <string name="transaction_cancelled">Transaction Cancelled</string>
+
+    <string name="update">Update</string>
+    <string name="update_msg">A newer version of the application is available. Please update your application to enjoy all new features. Do you want to update now?</string>
+
+
 </resources>

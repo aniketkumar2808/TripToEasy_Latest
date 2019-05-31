@@ -120,7 +120,7 @@
             android:layout_marginRight="@dimen/padding_10"
             android:layout_marginTop="@dimen/padding_10"
             android:orientation="horizontal"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="0dp"
@@ -161,7 +161,7 @@
             android:layout_marginRight="@dimen/padding_10"
             android:layout_marginTop="@dimen/padding_10"
             android:orientation="horizontal"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="0dp"
@@ -200,7 +200,7 @@
             android:layout_marginRight="@dimen/padding_10"
             android:layout_marginTop="@dimen/padding_10"
             android:orientation="horizontal"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="0dp"
@@ -232,7 +232,7 @@
             android:layout_marginRight="@dimen/padding_10"
             android:layout_marginTop="@dimen/padding_10"
             android:orientation="horizontal"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="0dp"
@@ -242,9 +242,7 @@
                 android:padding="@dimen/padding_5"
                 android:text="Possport Expire"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_16"
-
-                />
+                android:textSize="@dimen/text_16"/>
 
             <TextView
                 android:id="@+id/txtPassposrt"

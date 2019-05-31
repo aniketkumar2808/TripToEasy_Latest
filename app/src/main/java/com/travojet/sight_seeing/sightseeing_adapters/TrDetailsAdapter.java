@@ -28,8 +28,6 @@ import butterknife.ButterKnife;
 
 public class TrDetailsAdapter extends RecyclerView.Adapter<TrDetailsAdapter.ViewHolder>
 {
-
-
     public List<TRData> trDataList;
     //  Mr, Mrs , Miss, Master
     List<String> mTitle = new ArrayList<>();
@@ -38,7 +36,6 @@ public class TrDetailsAdapter extends RecyclerView.Adapter<TrDetailsAdapter.View
     ArrayAdapter TitleAdp, mWeightADP, mHeightADp;
     Context mContext;
     JSONArray mBookingQus;
-
     int SelWeightPos = -1;
     int SelHeightPos = -1;
 
@@ -53,10 +50,8 @@ public class TrDetailsAdapter extends RecyclerView.Adapter<TrDetailsAdapter.View
         this.mBookingQus = mBookingQus;
         mWeightType.add("kgs");
         mWeightType.add("ponds");
-
         mHeightType.add("cm");
         mHeightType.add("ft/in");
-
         mWeightADP = new ArrayAdapter<String>(mContext, android.R.layout.simple_list_item_1, android.R.id.text1, mWeightType);
         mHeightADp = new ArrayAdapter<String>(mContext, android.R.layout.simple_list_item_1, android.R.id.text1, mHeightType);
         TitleAdp = new ArrayAdapter<String>(mContext, android.R.layout.simple_list_item_1, android.R.id.text1, mTitle);
@@ -65,7 +60,8 @@ public class TrDetailsAdapter extends RecyclerView.Adapter<TrDetailsAdapter.View
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
+    {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_tr_details, parent, false);
         return new ViewHolder(itemView);
     }
@@ -113,24 +109,23 @@ public class TrDetailsAdapter extends RecyclerView.Adapter<TrDetailsAdapter.View
             }
         });
 
-        holder.spinnerTitle.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        holder.spinnerTitle.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)
+            {
                 trDataList.get(position).setTitle(i + 1);
                 SelWeightPos = i;
-
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+            public void onNothingSelected(AdapterView<?> adapterView)
+            {
 
             }
         });
-        try {
-            holder.llWeight.setVisibility(View.GONE);
-            holder.llHeight.setVisibility(View.GONE);
-            holder.llDOB.setVisibility(View.GONE);
-            holder.llPassportExpire.setVisibility(View.GONE);
+        try
+        {
             for (int i = 0; i < mBookingQus.length(); i++)
             {
                 JSONObject lJsonObject = mBookingQus.getJSONObject(i);
@@ -180,12 +175,9 @@ public class TrDetailsAdapter extends RecyclerView.Adapter<TrDetailsAdapter.View
                             trDataList.get(position).setWeight(editable.toString());
                         }
                     });
-
-
-
-
-
-                } else if (lJsonObject.getString("stringQuestionId").equalsIgnoreCase("heights_passengerHeights")) {
+                }
+                if (lJsonObject.getString("stringQuestionId").equalsIgnoreCase("heights_passengerHeights"))
+                {
                     holder.llHeight.setVisibility(View.VISIBLE);
                     trDataList.get(position).setShowHeight(true);
                     holder.spinner_Height_type.setAdapter(mWeightADP);
@@ -229,7 +221,9 @@ public class TrDetailsAdapter extends RecyclerView.Adapter<TrDetailsAdapter.View
                     });
 
 
-                } else if (lJsonObject.getString("stringQuestionId").equalsIgnoreCase("dateOfBirth_dob")) {
+                }
+                if (lJsonObject.getString("stringQuestionId").equalsIgnoreCase("dateOfBirth_dob"))
+                {
                     holder.llDOB.setVisibility(View.VISIBLE);
                     trDataList.get(position).setShowDOB(true);
                     holder.txtDOB.setOnClickListener(new View.OnClickListener()
@@ -243,28 +237,34 @@ public class TrDetailsAdapter extends RecyclerView.Adapter<TrDetailsAdapter.View
                     );
 
 
-                } else if (lJsonObject.getString("stringQuestionId").equalsIgnoreCase("passport_expiry")) {
+                }
+                if (lJsonObject.getString("stringQuestionId").equalsIgnoreCase("passport_expiry"))
+                {
                     holder.llPassportExpire.setVisibility(View.VISIBLE);
                     trDataList.get(position).setShowPassportExpire(true);
-                    holder.txtPassposrt.setOnClickListener(new View.OnClickListener() {
-                                                         @Override
-                                                         public void onClick(View view) {
-                                                             showDatePicker(holder.txtPassposrt, position);
-                                                         }
-                                                     }
-                    );
+                    holder.txtPassposrt.setOnClickListener(new View.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(View view)
+                        {
+                            showDatePicker(holder.txtPassposrt, position);
+                        }
+                    });
                 }
             }
 
 
 
-        } catch (Exception ex) {
+        }
+        catch (Exception ex)
+        {
             ex.printStackTrace();
         }
     }
 
 
-    private void showDatePicker(final TextView textView, final int position) {
+    private void showDatePicker(final TextView textView, final int position)
+    {
         final Calendar c = Calendar.getInstance();
         c.add(Calendar.YEAR, -10);
         int mYear = c.get(Calendar.YEAR);
@@ -285,9 +285,7 @@ public class TrDetailsAdapter extends RecyclerView.Adapter<TrDetailsAdapter.View
                         } else {
                             trDataList.get(position).setPassportExpiryDate(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
                         }
-
-
-                    }
+                        }
                 }, mYear, mMonth, mDay);
         datePickerDialog.getDatePicker().setMaxDate(c.getTimeInMillis());
         datePickerDialog.show();
@@ -300,56 +298,27 @@ public class TrDetailsAdapter extends RecyclerView.Adapter<TrDetailsAdapter.View
         return trDataList.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder
+    {
+        @BindView(R.id.txtHeader) TextView txtHeader;
+        @BindView(R.id.spinnerTitle) Spinner spinnerTitle;
+        @BindView(R.id.edFirstName) EditText edFirstName;
+        @BindView(R.id.edLastName) EditText edLastName;
+        @BindView(R.id.txtDOB) TextView txtDOB;
+        @BindView(R.id.llWeight) LinearLayout llWeight;
+        @BindView(R.id.llHeight) LinearLayout llHeight;
+        @BindView(R.id.llDOB) LinearLayout llDOB;
+        @BindView(R.id.llPassportExpire) LinearLayout llPassportExpire;
+        @BindView(R.id.txtPassposrt) TextView txtPassposrt;
+        @BindView(R.id.etHeight) EditText etHeight;
+        @BindView(R.id.etWeight) EditText etWeight;
+        @BindView(R.id.spinner_weight_type) Spinner spinner_weight_type;
+        @BindView(R.id.spinner_Height_type) Spinner spinner_Height_type;
 
-        @BindView(R.id.txtHeader)
-        TextView txtHeader;
-
-        @BindView(R.id.spinnerTitle)
-        Spinner spinnerTitle;
-
-        @BindView(R.id.edFirstName)
-        EditText edFirstName;
-
-        @BindView(R.id.edLastName)
-        EditText edLastName;
-
-        @BindView(R.id.txtDOB)
-        TextView txtDOB;
-
-        @BindView(R.id.llWeight)
-        LinearLayout llWeight;
-
-        @BindView(R.id.llHeight)
-        LinearLayout llHeight;
-
-        @BindView(R.id.llDOB)
-        LinearLayout llDOB;
-
-        @BindView(R.id.llPassportExpire)
-        LinearLayout llPassportExpire;
-
-        @BindView(R.id.txtPassposrt)
-        TextView txtPassposrt;
-
-        @BindView(R.id.etHeight)
-        EditText etHeight;
-
-        @BindView(R.id.etWeight)
-        EditText etWeight;
-
-        @BindView(R.id.spinner_weight_type)
-        Spinner spinner_weight_type;
-
-        @BindView(R.id.spinner_Height_type)
-        Spinner spinner_Height_type;
-
-
-        public ViewHolder(View itemView) {
+        public ViewHolder(View itemView)
+        {
             super(itemView);
             ButterKnife.bind(this, itemView);
-
-
         }
     }
 

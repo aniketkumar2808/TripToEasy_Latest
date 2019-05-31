@@ -59,7 +59,8 @@ public class TripListFragment extends BaseFragment implements  TripListAdapter.o
     }
 
 
-    private void LoadData() {
+    private void LoadData()
+    {
         if (mTripDataList.size() > 0) {
             mTripAdapter = new TripListAdapter(mTripDataList,this);
             rvTrip.setAdapter(mTripAdapter);
@@ -72,9 +73,11 @@ public class TripListFragment extends BaseFragment implements  TripListAdapter.o
     }
 
     @Override
-    public void onBookClicked(int position) {
+    public void onBookClicked(int position)
+    {
         Bundle bundle = new Bundle();
         bundle.putInt("search_id", getArguments().getInt("search_id"));
+        bundle.putString("tokenData", getArguments().getString("tokenData"));
         bundle.putSerializable("sel_data",  mTripDataList.get(position));
 
         intentAndFragmentService.fragmentDisplay(getActivity(), R.id.main_frame, new TravellerDetails(), bundle, true);

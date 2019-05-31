@@ -3,14 +3,19 @@ package com.travojet.utils.webservice;
 public class ApiConstants
 {
 
-  public static String BASE_URL = "https://travojet.com/mobile_webservices/mobile/index.php/";
+/*  public static String BASE_URL = "http://192.168.0.51/hoyyo/mobile/index.php/";
+  public String URL = "http://192.168.0.51/";
+  public static String IMAGE_BASE = "http://192.168.0.51/hoyyo/";*/
+
+public static String BASE_URL = "https://travojet.com/mobile_webservices/mobile/index.php/";
   public String URL = "https://travojet.com/";
-  public static String IMAGE_BASE = "hhttps://travojet.com/mobile_webservices";
+  public static String IMAGE_BASE = "https://travojet.com/mobile_webservices";
     public String URL_COUNTRY_LIST = BASE_URL+"flight/country_list";
     public String HOME_PAGE_API = BASE_URL+"general/mobile_top_destination_list";
     public String USER_LOGIN = BASE_URL+"auth/mobile_login";
     public String USER_SIGN_UP = BASE_URL+"auth/register_on_light_box_mobile";
-    public String FACEBOOK_LOGIN = BASE_URL+"user/mob_login_facebook";
+  public String HOME_UPDATE_CHECK_API = BASE_URL + "utilities/get_app_version";
+  public String FACEBOOK_LOGIN = BASE_URL+"user/mob_login_facebook";
     public String GOOLE_LOGIN = BASE_URL+"user/mob_login_google";
     public String CHANGE_PASSWORD=BASE_URL+"general/mobile_change_password";
     public String FORGOT_PASSWORD_OTP=BASE_URL+"general/mobile_forgotpassword";

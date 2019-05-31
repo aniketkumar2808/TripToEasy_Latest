@@ -28,9 +28,11 @@ import com.travojet.main.fragment.BaseFragment;
 import com.travojet.model.CountryInfo;
 import com.travojet.model.parsingModel.sightSeeing.TRData;
 import com.travojet.model.parsingModel.sightSeeing.TripData;
+import com.travojet.model.parsingModel.transfers.TransfersQuestionsInfo;
 import com.travojet.model.requestModel.FriendsData;
 import com.travojet.sight_seeing.adapter.TagFriendsListAdp;
 import com.travojet.sight_seeing.sightseeing_adapters.TrDetailsAdapter;
+import com.travojet.transfers.adapter.TransfersQuestionAdapter;
 import com.travojet.utils.Global;
 import com.travojet.utils.webservice.ApiConstants;
 import com.travojet.utils.webservice.WebInterface;
@@ -46,71 +48,44 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class TravellerDetails extends BaseFragment implements WebInterface, TagFriendsListAdp.onCheckBoxClicked {
+public class TravellerDetails extends BaseFragment implements WebInterface, TagFriendsListAdp.onCheckBoxClicked
+{
 
-    @BindView(R.id.rvTrDetails)
-    RecyclerView rvTrDetails;
-
-    @BindView(R.id.spinn_countrycode)
-    Spinner spinn_countrycode;
-
+    @BindView(R.id.rvTrDetails) RecyclerView rvTrDetails;
+    @BindView(R.id.spinn_countrycode) Spinner spinn_countrycode;
+    @BindView(R.id.rv_questions) RecyclerView rv_questions;
+    @BindView(R.id.llayout3) LinearLayout quesLayout;
+    @BindView(R.id.email_id_prim) EditText emailPrime;
+    @BindView(R.id.mobile_prime) EditText mobilePrime;
+    @BindView(R.id.spinnerHotelPickup) Spinner spinnerHotelPickup;
+    @BindView(R.id.txtHotelPackage) TextView txtHotelPackage;
+    @BindView(R.id.txtGrandTotal) TextView txtGrandTotal;
+    @BindView(R.id.llHotelPackage) LinearLayout llHotelPackage;
+    @BindView(R.id.llHotelName) LinearLayout llHotelName;
+    @BindView(R.id.edHotelName) EditText edHotelName;
+    @BindView(R.id.llPromCode) LinearLayout llPromCode;
+    @BindView(R.id.edPromoCode) EditText edPromoCode;
+    @BindView(R.id.cbTerms) CheckBox cbTerms;
+    @BindView(R.id.txtTag) TextView txtTag;
+    String Hotelpickupname = "", HotelPickupId = "",TourUniqId,PaymentMethod = "";
+    JSONObject tokenData;
+    JSONArray mBookingQuestions;
     TripData mTripData;
 
 
-    @BindView(R.id.email_id_prim)
-    EditText emailPrime;
 
-    @BindView(R.id.mobile_prime)
-    EditText mobilePrime;
-
-    @BindView(R.id.spinnerHotelPickup)
-    Spinner spinnerHotelPickup;
-
-    @BindView(R.id.txtHotelPackage)
-    TextView txtHotelPackage;
-
-    @BindView(R.id.txtGrandTotal)
-    TextView txtGrandTotal;
-
-
-    @BindView(R.id.llHotelPackage)
-    LinearLayout llHotelPackage;
-
-    @BindView(R.id.llHotelName)
-    LinearLayout llHotelName;
-
-    @BindView(R.id.edHotelName)
-    EditText edHotelName;
-
-    @BindView(R.id.llPromCode)
-    LinearLayout llPromCode;
-
-    @BindView(R.id.edPromoCode)
-    EditText edPromoCode;
-
-    @BindView(R.id.cbTerms)
-    CheckBox cbTerms;
-
-    @BindView(R.id.txtTag)
-    TextView txtTag;
-
-    String Hotelpickupname = "", HotelPickupId = "";
-
-    String TourUniqId;
-    String PaymentMethod = "";
-
-
-  /*  @OnClick(R.id.back_button)
-    public void goBack() {
+    /*  @OnClick(R.id.back_button)
+    public void goBack()
+    {
         getActivity().onBackPressed();
     }
 */
     int AdultCount = 0, ChildCount = 0, Infant = 0;
-
     List<TRData> mTrDataList = new ArrayList<>();
     ArrayList<CountryInfo> countryList = new ArrayList<CountryInfo>();
+    List<TransfersQuestionsInfo> quesList = new ArrayList<TransfersQuestionsInfo>();
+    TransfersQuestionAdapter transfersQuestionAdapter;
 
-    JSONArray mBookingQuestions;
 
 
     @OnClick(R.id.llMain)
@@ -127,39 +102,57 @@ public class TravellerDetails extends BaseFragment implements WebInterface, TagF
     TrDetailsAdapter trDetailsAdapter;
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
+    {
         super.onViewCreated(view, savedInstanceState);
         mTripData = (TripData) getArguments().getSerializable("sel_data");
+        String data = getArguments().getString("tokenData");
+        try
+        {
+            tokenData=new JSONObject(data);
+        }
+        catch (JSONException e)
+        {
+            e.printStackTrace();
+        }
+
         commonUtils.linearLayout(rvTrDetails, getContext());
-        if (applicationPreference.getData(applicationPreference.login_flag).equals("true")) {
+        commonUtils.linearLayout(rv_questions,getContext());
+
+        if (applicationPreference.getData(applicationPreference.login_flag).equals("true"))
+        {
             llPromCode.setVisibility(View.VISIBLE);
             txtTag.setVisibility(View.VISIBLE);
-        } else {
+        }
+        else
+        {
             llPromCode.setVisibility(View.GONE);
             txtTag.setVisibility(View.GONE);
         }
 
-
         emailPrime.setText(applicationPreference.getData("user_email"));
         mobilePrime.setText(applicationPreference.getData("user_mobile"));
         txtHotelPackage.setText(Html.fromHtml("Hotel Package <sup>*<sup>"));
-        spinnerHotelPickup.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinnerHotelPickup.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 Hotelpickupname = mHotelList.get(i);
                 HotelPickupId = mHotelIDs.get(i);
 
-                if (HotelPickupId.equalsIgnoreCase("notListed")) {
+                if (HotelPickupId.equalsIgnoreCase("notListed"))
+                {
                     llHotelName.setVisibility(View.VISIBLE);
-                } else {
+                }
+                else
+                {
                     llHotelName.setVisibility(View.GONE);
                 }
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
+            public void onNothingSelected(AdapterView<?> adapterView)
+            { }
         });
 
         loadCountries();
@@ -212,6 +205,13 @@ public class TravellerDetails extends BaseFragment implements WebInterface, TagF
             params.put("grade_code", mTripData.getGradeCode());
             params.put("grade_title", mTripData.getGradeTitle());
 
+            params.put("additional_info", tokenData.getString("AdditionalInfo"));
+            params.put("inclusions",tokenData.getString("Inclusions"));
+            params.put("exclusions",tokenData.getString("Exclusions") );
+            params.put("short_desc",tokenData.getString("ShortDescription"));
+            params.put("voucher_req",tokenData.getString("voucher_req"));
+            params.put("API_Price",tokenData.getString("API_Price") );
+
 
             JSONArray lJsonArray = mTripData.getAgeBands();
             for (int i = 0; i < lJsonArray.length(); i++) {
@@ -233,7 +233,6 @@ public class TravellerDetails extends BaseFragment implements WebInterface, TagF
             }
 
            /* params.put("Adult_Band_ID", "1");
-
             params.put("Child_Band_ID", "2");
             params.put("no_of_Child", mSelChildCount);
             params.put("Infant_Band_ID", "3");
@@ -262,6 +261,21 @@ public class TravellerDetails extends BaseFragment implements WebInterface, TagF
                 JSONObject lMainObj = new JSONObject(response);
                 JSONObject preBookingObj = lMainObj.getJSONObject("pre_booking_params");
                 mBookingQuestions = preBookingObj.getJSONArray("BookingQuestions");
+                JSONArray quesArr = preBookingObj.getJSONArray("BookingQuestions");
+                // JSONArray quesArr=new JSONArray(bookingQuestion);
+                for (int j=0;j<quesArr.length();j++){
+                    quesList.add(new TransfersQuestionsInfo(
+                            quesArr.getJSONObject(j).getString("questionId"),
+                            quesArr.getJSONObject(j).getString("stringQuestionId"),
+                            quesArr.getJSONObject(j).getString("message"),
+                            quesArr.getJSONObject(j).getString("subTitle"),
+                            null
+                    ));
+                }
+                if(quesList.size()>0)
+                {
+                    quesLayout.setVisibility(View.VISIBLE);
+                }
                 TourUniqId = preBookingObj.getString("tour_uniq_id");
                 PaymentMethod = lMainObj.getJSONArray("active_payment_options").getString(0);
                 mToken = lMainObj.getString("token");
@@ -309,13 +323,17 @@ public class TravellerDetails extends BaseFragment implements WebInterface, TagF
                     }
                     trDetailsAdapter = new TrDetailsAdapter(mTrDataList, getContext(), mBookingQuestions);
                     rvTrDetails.setAdapter(trDetailsAdapter);
+
+                    transfersQuestionAdapter = new TransfersQuestionAdapter(getActivity(), quesList);
+                    rv_questions.setAdapter(transfersQuestionAdapter);
                 } else {
                     llHotelPackage.setVisibility(View.GONE);
                 }
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
-        } else if (flag == 2) {
+        } else if (flag == 2)
+        {
             try {
 
                 JSONObject lJsonObject = new JSONObject(response);
@@ -365,7 +383,8 @@ public class TravellerDetails extends BaseFragment implements WebInterface, TagF
 
                 selTagFriends();
 
-            } catch (Exception ex) {
+            } catch (Exception ex)
+            {
                 ex.printStackTrace();
             }
         }
@@ -382,11 +401,14 @@ public class TravellerDetails extends BaseFragment implements WebInterface, TagF
         JSONArray Answer2 = new JSONArray();
         JSONArray Answer3 = new JSONArray();
         JSONArray Answer4 = new JSONArray();
-        JSONArray BookingQuestions = new JSONArray();
+        JSONArray questions = new JSONArray();
+       JSONObject pax_question = new JSONObject();
+       JSONObject BookingQuestions = new JSONObject();
 
         String heightType = "", weightType = "";
 
-        for (int i = 0; i < mTrDataList.size(); i++) {
+        for (int i = 0; i < mTrDataList.size(); i++)
+        {
             if (TextUtils.isEmpty(mTrDataList.get(i).getFirstName())) {
                 commonUtils.toastShort("Please Enter all the details", getActivity());
                 return;
@@ -437,21 +459,25 @@ public class TravellerDetails extends BaseFragment implements WebInterface, TagF
                     JSONObject lData = new JSONObject();
                     lData.put("FirstName", mTrDataList.get(i).getFirstName());
                     lData.put("LastName", mTrDataList.get(i).getLastName());
-                    lData.put("Pax_Type", mTrDataList.get(i).getTitle());
+                    lData.put("Pax_Type", "1");
+                    lData.put("Title", mTrDataList.get(i).getTitle());
 
                     if (mTrDataList.get(i).isShowWeight())
                     {
                         if (i == 0) weightType = mTrDataList.get(i).getWeightType();
                         Answer1.put(mTrDataList.get(i).getWeight());
                     }
-                    if (mTrDataList.get(i).isShowHeight()) {
+                    if (mTrDataList.get(i).isShowHeight())
+                    {
                         if (i == 0) heightType = mTrDataList.get(i).getHeightType();
                         Answer2.put(mTrDataList.get(i).getHeight());
                     }
-                    if (mTrDataList.get(i).isShowDOB()) {
+                    if (mTrDataList.get(i).isShowDOB())
+                    {
                         Answer3.put(mTrDataList.get(i).getDOB());
                     }
-                    if (mTrDataList.get(i).isShowPassportExpire()) {
+                    if (mTrDataList.get(i).isShowPassportExpire())
+                    {
                         Answer4.put(mTrDataList.get(i).getPassportExpiryDate());
                     }
 
@@ -460,32 +486,63 @@ public class TravellerDetails extends BaseFragment implements WebInterface, TagF
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
-
-
             }
 
         }
         try {
+
+            JSONArray question = new JSONArray();
+            JSONArray answer = new JSONArray();
+            for (int j = 0; j < mBookingQuestions.length(); j++)
+            {
+                JSONObject lJsonObject = mBookingQuestions.getJSONObject(j);
+                question.put(lJsonObject.getInt("questionId"));
+
+                if (lJsonObject.getString("stringQuestionId").equalsIgnoreCase("weights_passengerWeights")) {
+                    answer.put(Answer1);
+                } else if (lJsonObject.getString("stringQuestionId").equalsIgnoreCase("heights_passengerHeights")) {
+                    answer.put(Answer2);
+                } else if (lJsonObject.getString("stringQuestionId").equalsIgnoreCase("dateOfBirth_dob")) {
+                    answer.put(Answer3);
+                } else if (lJsonObject.getString("stringQuestionId").equalsIgnoreCase("passport_expiry")) {
+                    answer.put(Answer4);
+                }
+            }
+            for(int j = 0; j < question.length(); j++)
+            {
+                JSONObject lJsonObject = question.getJSONObject(j);
+                pax_question.put( lJsonObject.getString("questionId"),answer.get(j));
+
+            }
+
             for (int j = 0; j < mBookingQuestions.length(); j++)
             {
                 JSONObject lJsonObject = mBookingQuestions.getJSONObject(j);
                 JSONObject lBookingAns = new JSONObject();
                 if (lJsonObject.getString("stringQuestionId").equalsIgnoreCase("weights_passengerWeights")) {
                     lBookingAns.put("Question_id", lJsonObject.getInt("questionId"));
-                    lBookingAns.put("Answer", Answer1);
+                    lBookingAns.put("Answer", quesList.get(j).getAnswer());
                 } else if (lJsonObject.getString("stringQuestionId").equalsIgnoreCase("heights_passengerHeights")) {
                     lBookingAns.put("Question_id", lJsonObject.getInt("questionId"));
-                    lBookingAns.put("Answer", Answer2);
+                    lBookingAns.put("Answer", quesList.get(j).getAnswer());
                 } else if (lJsonObject.getString("stringQuestionId").equalsIgnoreCase("dateOfBirth_dob")) {
                     lBookingAns.put("Question_id", lJsonObject.getInt("questionId"));
-                    lBookingAns.put("Answer", Answer3);
+                    lBookingAns.put("Answer", quesList.get(j).getAnswer());
                 } else if (lJsonObject.getString("stringQuestionId").equalsIgnoreCase("passport_expiry")) {
                     lBookingAns.put("Question_id", lJsonObject.getInt("questionId"));
-                    lBookingAns.put("Answer", Answer4);
+                    lBookingAns.put("Answer", quesList.get(j).getAnswer());
                 }
-                BookingQuestions.put(lBookingAns);
+                questions.put(lBookingAns);
             }
-        } catch (Exception ex) {
+
+            BookingQuestions.put("pax_question",pax_question);
+            BookingQuestions.put("Questions",questions);
+
+
+
+
+        } catch (Exception ex)
+        {
             ex.printStackTrace();
         }
 
@@ -505,10 +562,13 @@ public class TravellerDetails extends BaseFragment implements WebInterface, TagF
         params.put("ContactNo", mobilePrime.getText().toString());
         params.put("final_fare", mPrice);
         params.put("Passengers", lPassengers);
-        params.put("BookingQuestions", BookingQuestions);
         params.put("height", heightType);
         params.put("weight", weightType);
         params.put("HotelPickupId", HotelPickupId);
+        if(quesList.size()>0)
+        {
+            params.put("BookingQuestions", BookingQuestions);
+        }
 
         if (llHotelPackage.getVisibility() == View.VISIBLE && llHotelName.getVisibility() == View.VISIBLE) {
             params.put("Hotelpickupname", edHotelName.getText().toString());
@@ -527,6 +587,7 @@ public class TravellerDetails extends BaseFragment implements WebInterface, TagF
         params.put("token", mToken);
         params.put("token_key", mTokenKey);
         params.put("customer_id", applicationPreference.getData(applicationPreference.userId));
+        Log.e("pre booking params is ",params.toString());
         lController.postRequest(ApiConstants.PRE_BOOKING, params, 2);
 
     }

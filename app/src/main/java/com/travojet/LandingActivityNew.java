@@ -1,7 +1,12 @@
 package com.travojet;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -230,7 +235,6 @@ public class LandingActivityNew extends BaseActivity implements WebInterface
         webServiceController = new WebServiceController(this, LandingActivityNew.this);
         webServiceController.getRequest(apiConstants.HOME_PAGE_API, 1, true);
 
-
      /*   try {
             PackageInfo info = getPackageManager().getPackageInfo(
                     "com.travojet",
@@ -315,14 +319,13 @@ public class LandingActivityNew extends BaseActivity implements WebInterface
     }
 
     @Override
-    public void getResponse(String response, int flag) {
-        try{
-            if(flag==1)
-            {
+    public void getResponse(String response, int flag)
+    {
+        try {
+            if (flag == 1) {
                 topHotelModels.clear();
                 JSONObject jsonObject = new JSONObject(response);
-                if (jsonObject.getInt("status") == 1)
-                {
+                if (jsonObject.getInt("status") == 1) {
                     JSONObject dataObj = jsonObject.getJSONObject("data");
                     JSONObject hotelObj = dataObj.getJSONObject("hotel");
 
@@ -351,13 +354,14 @@ public class LandingActivityNew extends BaseActivity implements WebInterface
                 webServiceController.postRequest(apiConstants.URL_PROMOCODE_LIST, params, 3);
 
             }
-            if(flag==2){
+            if (flag == 2)
+            {
                 currencyList.clear();
 
-                JSONObject jsonObject=new JSONObject(response);
-                JSONArray currArr=jsonObject.getJSONArray("converter");
-                for (int i=0;i<currArr.length();i++){
-                    if(currArr.getJSONObject(i).getString("status").equals("1")){
+                JSONObject jsonObject = new JSONObject(response);
+                JSONArray currArr = jsonObject.getJSONArray("converter");
+                for (int i = 0; i < currArr.length(); i++) {
+                    if (currArr.getJSONObject(i).getString("status").equals("1")) {
                         currencyList.add(new CurrencyConverter(
                                 currArr.getJSONObject(i).getString("id"),
                                 currArr.getJSONObject(i).getString("status"),
@@ -370,16 +374,14 @@ public class LandingActivityNew extends BaseActivity implements WebInterface
                 }
                 showCurrencyDialog();
             }
-            if(flag==3) {
+            if (flag == 3) {
 
                 packageModels.clear();
 
                 JSONObject jsonObject = new JSONObject(response);
-                if (jsonObject.getInt("status")==1)
-                {
+                if (jsonObject.getInt("status") == 1) {
                     JSONArray jsonArray = jsonObject.getJSONArray("data");
-                    for (int i = 0; i < jsonArray.length(); i++)
-                    {
+                    for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject promoObj = jsonArray.getJSONObject(i);
                         packageModels.add(new PromoCodeInfo(promoObj.getString("module"),
                                 promoObj.getString("promo_code"),
@@ -388,34 +390,86 @@ public class LandingActivityNew extends BaseActivity implements WebInterface
                                 promoObj.getString("status"),
                                 "https://" +
                                         promoObj.getString("promo_code_image")));
-                        Log.e("PromoImage","https://"+
+                        Log.e("PromoImage", "https://" +
                                 promoObj.getString("promo_code_image"));
-                            }
-                        }
-                        internationalPackageLanding.notifyDataSetChanged();
+                    }
+                }
+                internationalPackageLanding.notifyDataSetChanged();
                 RequestParams params = new RequestParams();
                 webServiceController.postRequest(apiConstants.TOP_AIRLINES, params, 4);
             }
 
-            if(flag==4) {
+            if (flag == 4) {
 
                 topAirlinesList.clear();
 
                 JSONObject jsonObject = new JSONObject(response);
-                if (jsonObject.getInt("status")==1)
-                {
+                if (jsonObject.getInt("status") == 1) {
                     JSONArray jsonArray = jsonObject.getJSONArray("data");
-                    for (int i = 0; i < jsonArray.length(); i++)
-                    {
+                    for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject promoObj = jsonArray.getJSONObject(i);
                         topAirlinesList.add(new TopAirlinesModel(promoObj.getString("airline_name"),
-                                apiConstants.URL+promoObj.getString("logo")));
+                                apiConstants.URL + promoObj.getString("logo")));
                     }
                 }
                 topAirlineAdapter.notifyDataSetChanged();
-
+                RequestParams params = new RequestParams();
+                webServiceController.postRequest(apiConstants.HOME_UPDATE_CHECK_API, params, 5);
 
             }
+
+
+            if (flag == 5)
+            {
+                try {
+
+                    JSONObject res = new JSONObject(response);
+                    if (res.getInt("status") == 1) {
+                        int version = res.getJSONObject("data").getInt("app_version_android");
+
+                        try {
+                            PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+                            Log.e("Api version response", version + "   system version response " + pInfo.versionCode);
+                            if (version > pInfo.versionCode) {
+                                AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+                                dialog.setTitle(getResources().getString(R.string.update));
+                                dialog.setMessage(getResources().getString(R.string.update_msg));
+                                dialog.setCancelable(false);
+
+                                //Setting message manually and performing action on button click
+                                dialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        final String appPackageName = getPackageName(); // getPackageName() from Context or Activity object
+                                        try {
+                                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+                                        } catch (android.content.ActivityNotFoundException anfe) {
+                                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+                                        }
+                                        finish();
+                                    }
+                                })
+                                       /* .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int id) {
+                                                //  Action for 'NO' Button
+                                                dialog.cancel();
+                                            }
+                                        })*/;
+                                //Creating dialog box
+                                AlertDialog alert = dialog.create();
+                                //Setting the title manually
+                                alert.show();
+                            }
+                        } catch (PackageManager.NameNotFoundException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+        }
+
         }catch (Exception e){
             e.printStackTrace();
         }

@@ -144,6 +144,34 @@
 
                 </LinearLayout>
             </LinearLayout>
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/llayout3"
+                android:layout_below="@+id/layout_tax"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Answer the questions"
+                    android:textColor="@color/white"
+                    android:padding="@dimen/padding_10"
+                    android:textSize="@dimen/text_16"
+                    android:textStyle="bold"
+                    android:background="@color/blue_text"/>
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rv_questions">
+                    </android.support.v7.widget.RecyclerView>
+                </android.support.v4.widget.NestedScrollView>
+
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
