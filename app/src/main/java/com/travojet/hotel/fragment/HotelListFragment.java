@@ -444,17 +444,16 @@ public class HotelListFragment extends BaseFragment
                 i++;
             }
 
-            if (this.hotelListing.size() != 0)
-            {
-                hotels_found.setText(this.hotelListing.size() + " Hotels found / " + hotelListingBackup.size());
-                hotelListAdapter.notifyDataSetChanged();
-            } else {
-                hotels_found.setText(this.hotelListing.size() + " Hotels found / " + hotelListingBackup.size());
-                commonUtils.toastShort("No Data Found for search parameter.",
-                        getActivity());
-                hotelListAdapter.notifyDataSetChanged();
-            }
-
+        }
+        if (this.hotelListing.size() != 0)
+        {
+            hotels_found.setText(this.hotelListing.size() + " Hotels found / " + hotelListingBackup.size());
+            hotelListAdapter.notifyDataSetChanged();
+        } else {
+            hotels_found.setText(this.hotelListing.size() + " Hotels found / " + hotelListingBackup.size());
+            commonUtils.toastShort("No Data Found for search parameter.",
+                    getActivity());
+            hotelListAdapter.notifyDataSetChanged();
         }
 
     }
