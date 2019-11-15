@@ -185,6 +185,10 @@ public class LandingActivityNew extends BaseActivity implements WebInterface
                 break;
             case "USD" : currency_icon.setImageResource(R.drawable.flag_united_states_of_america);
                 break;
+            case "CAD" : currency_icon.setImageResource(R.drawable.cad);
+                break;
+            case "BDT" : currency_icon.setImageResource(R.drawable.bdt);
+                break;
             default:
                 break;
         }
@@ -512,6 +516,10 @@ public class LandingActivityNew extends BaseActivity implements WebInterface
             case "INR" : currency_icon.setImageResource(R.drawable.flag_india);
                 break;
             case "USD" : currency_icon.setImageResource(R.drawable.flag_united_states_of_america);
+                break;
+            case "CAD" : currency_icon.setImageResource(R.drawable.cad);
+                break;
+            case "BDT" : currency_icon.setImageResource(R.drawable.bdt);
                 break;
             default:
                 break;

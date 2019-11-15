@@ -173,6 +173,7 @@ public class HotelListFragment extends BaseFragment
     }
 
     private void lodeListData() {
+        hotelListing.clear();
         Thread thread = new Thread(){
             @Override
             public void run() {
@@ -455,6 +456,7 @@ public class HotelListFragment extends BaseFragment
                     getActivity());
             hotelListAdapter.notifyDataSetChanged();
         }
+
 
     }
 

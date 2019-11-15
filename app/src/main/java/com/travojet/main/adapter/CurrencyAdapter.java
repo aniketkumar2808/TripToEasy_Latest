@@ -75,6 +75,11 @@ public class CurrencyAdapter extends CommonRecyclerAdapter {
                 break;
             case "USD" : iv_flag.setImageResource(R.drawable.flag_united_states_of_america);
                 break;
+            case "CAD" : iv_flag.setImageResource(R.drawable.cad);
+                break;
+            case "BDT" : iv_flag.setImageResource(R.drawable.bdt);
+                break;
+
             default:
                 break;
         }

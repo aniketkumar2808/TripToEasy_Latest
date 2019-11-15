@@ -64,7 +64,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_14"
                     android:inputType="number"
-                    android:maxLength="10"
+                    android:maxLength="15"
                     android:hint="Mobile" />
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout

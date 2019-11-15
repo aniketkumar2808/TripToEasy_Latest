@@ -249,7 +249,7 @@
 
                     <EditText
                         android:id="@+id/mobile_prime"
-                        android:maxLength="10"
+                        android:maxLength="15"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.7"

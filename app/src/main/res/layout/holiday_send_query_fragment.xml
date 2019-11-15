@@ -37,7 +37,7 @@
         android:layout_marginBottom="@dimen/margin_10"
         android:background="@drawable/white_butten"
         android:padding="@dimen/padding_10"
-        android:maxLength="10"
+        android:maxLength="15"
         android:hint="Contact Number*"
         android:textColor="@color/black"
         android:inputType="phone"/>

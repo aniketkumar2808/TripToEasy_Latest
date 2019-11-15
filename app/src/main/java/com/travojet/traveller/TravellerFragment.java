@@ -271,7 +271,7 @@ public class TravellerFragment extends BaseFragment implements NotifyTraveller,
         } else if (mobilePrime.getText().toString().trim().equals(""))
         {
             commonUtils.toastShort("Please enter mobile number", getActivity());
-        } else if (mobilePrime.getText().toString().trim().length() != 10) {
+        } else if (mobilePrime.getText().toString().trim().length() < 10) {
             commonUtils.toastShort("enter valid mobile number", getActivity());
         } else {
             try {

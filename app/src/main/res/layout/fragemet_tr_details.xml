@@ -238,7 +238,7 @@
                     android:drawableTint="@color/red"
                     android:hint="Mobile Number"
                     android:inputType="phone"
-                    android:maxLength="10"
+                    android:maxLength="15"
                     android:padding="@dimen/padding_10" />
 
             </LinearLayout>

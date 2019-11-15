@@ -123,7 +123,8 @@ public class CitySearchFragment extends BaseFragment {
             @Override
             public void afterTextChanged(Editable editable) {
                 cityLists.clear();
-                if(cityNameSearch.getText().toString().length() != 0){
+                if(cityNameSearch.getText().toString().length() != 0)
+                {
                     if(requestType == 1 || requestType == 2 || requestType == 3 || requestType == 4){
                         cityLists = dbAdapter.getFlightCityData(cityNameSearch.getText().toString());
                     }else if(requestType == 5){
